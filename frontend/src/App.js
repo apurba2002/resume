@@ -13,7 +13,8 @@ class Tempcontrol extends React.Component {
         $("#tfu").click(() => {
             $("#gallery").fadeOut("4000")
             $("#promotion").fadeIn("4000")
-            
+            window.location.href = "#temp-control";
+
 
         })
         $("#tg").mouseover(() => {
@@ -35,7 +36,8 @@ class Tempcontrol extends React.Component {
     render() {
         return (
             <>
-                <section id="temp-control">
+                <section id="temp-control" style={{display:"none"}}>
+                    <p className="text-center fs-2" id="tct">Select And Create Something Nice</p>
                     <div className="row " style={{}}>
                         <div className="col-2 p-0">
 
@@ -71,96 +73,53 @@ class Tem extends React.Component {
         return (
             <>
                 <section id="tem-for-u">
-                    <div className="row">
-
-                        <div className="col-2 p-0"></div>
-                        <div className="col-2 p-0">
-                            <img className="" style={{ width: "100%", marginLeft: "" }} src="green-2.png"></img>
-                            <span className="text-secondary tem-span m-0 p-0 ">Simple resume</span>
-                        </div>
-                        <div className="col-2 p-0">
-                            <img className="" style={{ width: "100%", marginLeft: "" }} src="green-2.png"></img>
-                            <span className="text-secondary tem-span m-0 p-0 ">Simple resume</span>
-                        </div>
-                        <div className="col-2 p-0">
-                            <img className="" style={{ width: "100%", marginLeft: "" }} src="green-2.png"></img>
-                            <span className="text-secondary tem-span m-0 p-0 ">Simple resume</span>
-                        </div>
-                        <div className="col-2 p-0">
-                            <img className="" style={{ width: "100%", marginLeft: "" }} src="green-2.png"></img>
-                            <span className="text-secondary tem-span m-0 p-0 ">Simple resume</span>
-                        </div>
-                        <div className="col-2 p-0"></div>
-
-
-
-
-
-
-                    </div>
+                   
                 </section>
                 <section id="gallery" style={{ display: "none" }}>
-                    <div className="row">
-
-                        <div className="col-2 p-0 mt-3"></div>
-                        <div className="col-2 p-0 mt-3">
-                            <img className="" style={{ width: "100%", marginLeft: "" }} src="green-2.png"></img>
-                            <span className="text-secondary tem-span m-0 p-0 ">Simple resume</span>
-                        </div>
-                        <div className="col-2 p-0 mt-3">
-                            <img className="" style={{ width: "100%", marginLeft: "" }} src="green-2.png"></img>
-                            <span className="text-secondary tem-span m-0 p-0 ">Simple resume</span>
-                        </div>
-                        <div className="col-2 p-0 mt-3">
-                            <img className="" style={{ width: "100%", marginLeft: "" }} src="green-2.png"></img>
-                            <span className="text-secondary tem-span m-0 p-0 ">Simple resume</span>
-                        </div>
-                        <div className="col-2 p-0 mt-3">
-                            <img className="" style={{ width: "100%", marginLeft: "" }} src="green-2.png"></img>
-                            <span className="text-secondary tem-span m-0 p-0 ">Simple resume</span>
-                        </div>
-                        <div className="col-2 p-0"></div>
-                    </div>
+                    
                 </section>
             </>
         )
     }
 }
 class Navbar extends React.Component {
-
+   componentDidMount(){
+    $("#ntb").click(()=>{
+        $("#promotion").fadeOut(2000)
+        $("#promoimg").fadeOut(2000)
+        $("#temp-control").fadeIn(4000)
+    })
+   }
 
     render() {
         return (
             <>
                 <section id="navbar">
-                    <nav className="navbar sticky-top  bg-light fixed-top">
+                    <nav className="navbar navbar-expand-lg fixed-top bg-light">
                         <div className="container-fluid">
                             <a className="navbar-brand text-primary" href="index.html">Resume.com</a>
-                            <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon"></span>
                             </button>
-                            <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                                <div className="offcanvas-header">
-                                    <h5 className="offcanvas-title text-primary" id="offcanvasNavbarLabel">Resume.com</h5>
-                                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                </div>
-                                <div className="offcanvas-body">
-                                    <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-                                        <li className="nav-item">
-                                            <a className="nav-link active" aria-current="page" href="#">Home</a>
-                                        </li>
-                                        <li className="nav-item">
-                                            <a className="nav-link" href="#">About</a>
-                                            <a className="nav-link" href="">Contact</a>
-                                            <a className="nav-link" href="">Privacy policy</a>
-                                            <br></br>
-                                            <a href="https://apurba2002.github.io/test/" target="blank">   <button className="btn btn-primary"   >Try our new cover creator</button></a>
-
-                                        </li>
-
-                                    </ul>
-
-                                </div>
+                            <div className="collapse navbar-collapse" id="navbarNav">
+                                <ul className="navbar-nav">
+                                <li className="nav-item">
+                                        <a className="nav-link " aria-current="page" href="index.html">Home</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link " aria-current="page" href="#">About</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">Privacy policy</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">Contact</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link  " href="#" id="ntb">Templetes</a>
+                                    </li>
+                                    <button className=" btn btn-primary " id="cbtn"  onClick={()=>{window.open("https://apurba2002.github.io/test/") }} >Try our new cover Creator</button>
+                                </ul>
                             </div>
                         </div>
                     </nav>
@@ -177,11 +136,17 @@ class Navbar extends React.Component {
 }
 class Promotion extends React.Component {
     componentDidMount() {
-        $("#ptxt").mouseover(()=>{
+        $("#ptxt").mouseover(() => {
             $("#ptxt").addClass("animation_flip")
         })
-        $("#ptxt").mouseout(()=>{
+        $("#ptxt").mouseout(() => {
             $("#ptxt").removeClass("animation_flip")
+        })
+        $("#jump").click(()=>{
+            $("#promotion").fadeOut(2000)
+            $("#promoimg").fadeOut(2000)
+            $("#temp-control").fadeIn(4000)
+           
         })
     }
     render() {
@@ -193,9 +158,10 @@ class Promotion extends React.Component {
 
                     </div>
                     <div className="col-8 p-0">
-                        <p className=" text-center pt-5 text-primary fs-1  " id="ptxt" >
+                        <p className=" text-center   fs-1  " id="ptxt" >
                             Introducing the ultimate tool for crafting your perfect resume - Resume Creator!
                         </p>
+                        <button className="btn btn-primary" id="jump" >Start Now</button>
                     </div>
                     <div className="col-2 p-0">
 
@@ -206,45 +172,19 @@ class Promotion extends React.Component {
         );
     }
 }
-class Image extends React.Component {
+
+class PromoImg extends React.Component {
+    componentDidMount() {
+
+    }
     render() {
         return (
-            <section id="pimg">
+            <section id="promoimg">
                 <div className="row">
-                    <div className="col-2 p-0">
-
-                    </div>
-                    <div className="col-8 p-0">
-                        <img className="pt-5" width={"100%"} src="pngtree-e-learning-education-online-illustration-png-image_3616764.jpg"></img>
-
-                    </div>
-                    <div className="col-2 p-0">
-
-                    </div>
-
-
-                </div>
-            </section>
-        )
-    }
-}
-class Footer extends React.Component {
-    componentDidMount(){
-        $("#footer").mouseover(()=>{
-            $("#footer").addClass("animation_foot")
-        })
-        $("#footer").mouseout(()=>{
-            $("#footer").removeClass("animation_foot")
-        })
-    }
-    render() {
-        return (
-            <section id="footer" className="mt-5">
-               <div className="row">
                     <div className="col-12 col-lg-12 p-0">
-                        <img className="w-100 mt-3" id="wave"  src="f2.png"></img>
+                        <img id="pimg" src="pngtree-e-learning-class-flat-illustration-png-png-image_3727055-removebg-preview.png"></img>
                     </div>
-               </div>
+                </div>
             </section>
         )
     }
@@ -253,11 +193,11 @@ function App() {
     return (
         <>
             <Navbar />
-
+            <Promotion />
+            <PromoImg />
             <Tempcontrol />
             <Tem />
-            <Promotion />
-            <Footer />
+
 
 
         </>

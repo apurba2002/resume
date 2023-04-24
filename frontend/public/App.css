@@ -1,3 +1,6 @@
+body{
+    overflow-x: hidden;
+}
 .hover{
     text-decoration: underline;
 }
@@ -5,9 +8,48 @@
     animation: heartBeat;
     animation-duration: 2s;
 }
-@media  screen and (max-width:1024px){
+#pimg{
+    margin-left: 25%;
+    width: 50%;
+    height: 500px;
+}
+#cbtn{
+    margin-left: 10px;
+}
+#ptxt{
+    margin-top: 80px;
+}
+#jump{
+    width: 20%;
+    margin-left: 40%;
+}
+#jump:hover{
+    background-color: black;
+}
+#tct{
+    margin-top: 80px;
+}
+@media  screen and (max-width:768px){
+    body{
+        overflow-x: hidden;
+    }
     .tem-span{
         font-size: 6pt;
+    }
+    #pimg{
+        height: 200px;
+    }
+    #cbtn{
+        margin-left: 0;
+        
+    }
+    #jump{
+        width: 80%;
+        margin-left: 10%;
+    }
+    #tct{
+        width: 95%;
+        margin-left: 2.5%;
     }
 }
 .animation_foot{
