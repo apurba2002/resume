@@ -10,3 +10,8 @@
         font-size: 6pt;
     }
 }
+.animation_foot{
+    animation:shakeX;
+    animation-duration: 5s;
+   
+}
