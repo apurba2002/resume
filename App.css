@@ -1,0 +1,12 @@
+.hover{
+    text-decoration: underline;
+}
+.animation_flip{
+    animation: heartBeat;
+    animation-duration: 2s;
+}
+@media  screen and (max-width:1024px){
+    .tem-span{
+        font-size: 6pt;
+    }
+}
