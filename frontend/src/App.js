@@ -8,9 +8,13 @@ class Tempcontrol extends React.Component {
     componentDidMount() {
         $("#tg").click(() => {
             $("#gallery").fadeIn("4000")
+            $("#promotion").fadeOut("4000")
         })
         $("#tfu").click(() => {
             $("#gallery").fadeOut("4000")
+            $("#promotion").fadeIn("4000")
+            
+
         })
         $("#tg").mouseover(() => {
             $("#tg").addClass("hover")
@@ -72,15 +76,19 @@ class Tem extends React.Component {
                         <div className="col-2 p-0"></div>
                         <div className="col-2 p-0">
                             <img className="" style={{ width: "100%", marginLeft: "" }} src="green-2.png"></img>
+                            <span className="text-secondary tem-span m-0 p-0 ">Simple resume</span>
                         </div>
                         <div className="col-2 p-0">
                             <img className="" style={{ width: "100%", marginLeft: "" }} src="green-2.png"></img>
+                            <span className="text-secondary tem-span m-0 p-0 ">Simple resume</span>
                         </div>
                         <div className="col-2 p-0">
                             <img className="" style={{ width: "100%", marginLeft: "" }} src="green-2.png"></img>
+                            <span className="text-secondary tem-span m-0 p-0 ">Simple resume</span>
                         </div>
                         <div className="col-2 p-0">
                             <img className="" style={{ width: "100%", marginLeft: "" }} src="green-2.png"></img>
+                            <span className="text-secondary tem-span m-0 p-0 ">Simple resume</span>
                         </div>
                         <div className="col-2 p-0"></div>
 
@@ -97,15 +105,19 @@ class Tem extends React.Component {
                         <div className="col-2 p-0 mt-3"></div>
                         <div className="col-2 p-0 mt-3">
                             <img className="" style={{ width: "100%", marginLeft: "" }} src="green-2.png"></img>
+                            <span className="text-secondary tem-span m-0 p-0 ">Simple resume</span>
                         </div>
                         <div className="col-2 p-0 mt-3">
                             <img className="" style={{ width: "100%", marginLeft: "" }} src="green-2.png"></img>
+                            <span className="text-secondary tem-span m-0 p-0 ">Simple resume</span>
                         </div>
                         <div className="col-2 p-0 mt-3">
                             <img className="" style={{ width: "100%", marginLeft: "" }} src="green-2.png"></img>
+                            <span className="text-secondary tem-span m-0 p-0 ">Simple resume</span>
                         </div>
                         <div className="col-2 p-0 mt-3">
                             <img className="" style={{ width: "100%", marginLeft: "" }} src="green-2.png"></img>
+                            <span className="text-secondary tem-span m-0 p-0 ">Simple resume</span>
                         </div>
                         <div className="col-2 p-0"></div>
                     </div>
@@ -123,7 +135,7 @@ class Navbar extends React.Component {
                 <section id="navbar">
                     <nav className="navbar sticky-top  bg-light fixed-top">
                         <div className="container-fluid">
-                            <a className="navbar-brand text-primary" href="#">Resume.com</a>
+                            <a className="navbar-brand text-primary" href="index.html">Resume.com</a>
                             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                                 <span className="navbar-toggler-icon"></span>
                             </button>
@@ -164,25 +176,77 @@ class Navbar extends React.Component {
     }
 }
 class Promotion extends React.Component {
+    componentDidMount() {
+        $("#ptxt").mouseover(()=>{
+            $("#ptxt").addClass("animation_flip")
+        })
+        $("#ptxt").mouseout(()=>{
+            $("#ptxt").removeClass("animation_flip")
+        })
+    }
     render() {
+
         return (
             <section id="promotion">
                 <div className="row">
-                    <div className="col-2">
+                    <div className="col-2 p-0">
 
                     </div>
-                    <div className="col-8">
-                        <p className=" text-center pt-5 text-primary fs-6  " >
+                    <div className="col-8 p-0">
+                        <p className=" text-center pt-5 text-primary fs-1  " id="ptxt" >
                             Introducing the ultimate tool for crafting your perfect resume - Resume Creator!
                         </p>
                     </div>
-                    <div className="col-2">
+                    <div className="col-2 p-0">
 
                     </div>
 
                 </div>
             </section>
         );
+    }
+}
+class Image extends React.Component {
+    render() {
+        return (
+            <section id="pimg">
+                <div className="row">
+                    <div className="col-2 p-0">
+
+                    </div>
+                    <div className="col-8 p-0">
+                        <img className="pt-5" width={"100%"} src="pngtree-e-learning-education-online-illustration-png-image_3616764.jpg"></img>
+
+                    </div>
+                    <div className="col-2 p-0">
+
+                    </div>
+
+
+                </div>
+            </section>
+        )
+    }
+}
+class Footer extends React.Component {
+    componentDidMount(){
+        $("#footer").mouseover(()=>{
+            $("#footer").addClass("animation_foot")
+        })
+        $("#footer").mouseout(()=>{
+            $("#footer").removeClass("animation_foot")
+        })
+    }
+    render() {
+        return (
+            <section id="footer" className="mt-5">
+               <div className="row">
+                    <div className="col-12 col-lg-12 p-0">
+                        <img className="w-100 mt-3" id="wave"  src="f2.png"></img>
+                    </div>
+               </div>
+            </section>
+        )
     }
 }
 function App() {
@@ -193,6 +257,8 @@ function App() {
             <Tempcontrol />
             <Tem />
             <Promotion />
+            <Footer />
+
 
         </>
     )
