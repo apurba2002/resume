@@ -87,6 +87,7 @@ class Navbar extends React.Component {
     $("#ntb").click(()=>{
         $("#promotion").fadeOut(2000)
         $("#promoimg").fadeOut(2000)
+        $("#midnav").fadeOut(2000)
         $("#temp-control").fadeIn(4000)
     })
    }
@@ -136,15 +137,11 @@ class Navbar extends React.Component {
 }
 class Promotion extends React.Component {
     componentDidMount() {
-        $("#ptxt").mouseover(() => {
-            $("#ptxt").addClass("animation_flip")
-        })
-        $("#ptxt").mouseout(() => {
-            $("#ptxt").removeClass("animation_flip")
-        })
+       
         $("#jump").click(()=>{
             $("#promotion").fadeOut(2000)
             $("#promoimg").fadeOut(2000)
+            $("#midnav").fadeOut(2000)
             $("#temp-control").fadeIn(4000)
            
         })
@@ -158,7 +155,7 @@ class Promotion extends React.Component {
 
                     </div>
                     <div className="col-8 p-0">
-                        <p className=" text-center   fs-1  " id="ptxt" >
+                        <p className=" text-center   fs-1  "  id="ptxt" >
                             Introducing the ultimate tool for crafting your perfect resume - Resume Creator!
                         </p>
                         <button className="btn btn-primary" id="jump" >Start Now</button>
@@ -189,12 +186,59 @@ class PromoImg extends React.Component {
         )
     }
 }
+class MidNav extends React.Component{
+    render(){
+        return(
+            <>
+                <section id="midnav">
+                    <div className="contain">
+                        <div className="box">
+                            <img src="contactimg.jpg" className="boximg"></img>
+                            <br></br>
+                            <br>
+                            </br>
+                            <h3 className="boxtxt">Contact Us</h3>
+                          
+                            <p className="boxtxt">
+                                Our team is available 24 hours for you . So don't hesitate to Contact us any time.
+                            </p>
+                        </div>
+                        <div className="box">
+                            <img src="privacyimg.jpg" className="boximg"></img>
+                            <br></br>
+                            <br>
+                            </br>
+                            <h3 className="boxtxt">Our Privacy</h3>
+                          
+                            <p className="boxtxt">
+                                We are always working hard to secure your information.
+                            </p>
+                        </div>
+                        <div className="box" style={{marginRight:"0"}}>
+                            <img src="temimg.jpg" className="boximg"></img>
+                            <br></br>
+                            <br>
+                            </br>
+                            <h3 className="boxtxt">Templetes </h3>
+                          
+                            <p className="boxtxt">
+                                Our designers know your expectation. Just choose and save your time.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </>
+        )
+    }
+}
 function App() {
     return (
         <>
             <Navbar />
+           
+           
             <Promotion />
-            <PromoImg />
+            <MidNav />
             <Tempcontrol />
             <Tem />
 
