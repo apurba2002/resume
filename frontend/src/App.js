@@ -133,7 +133,7 @@ class Navbar extends React.Component {
                                         <a className="nav-link" href="#">Privacy policy</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Contact</a>
+                                        <a className="nav-link" href="#footer">Contact</a>
                                     </li>
                                     <li className="nav-item">
                                         <a className="nav-link" href="#reviewcard" id="nrb">Customer review</a>
@@ -345,14 +345,14 @@ class Reviewcard extends React.Component{
                             <button className="btn btn-primary" id="lm2" >Learn more</button>
                         </div>
                         <div className="box" style={{marginRight:"0"}}>
-                            <img src="cwomen.jpg" className="boximg"></img>
+                            <img src="cwomen2.jpg" className="boximg"></img>
                             <br></br>
                             <br>
                             </br>
                             <h3 className="boxtxt">Sanna Marine</h3>
                           
                             <p className="boxtxt">
-                                Resume.com is an exceptional platform for anyone looking to create a professional resume with ease. 
+                                Resume.com is an exceptional platform for anyone looking to create a professional resume with ease.The site's interface is .....
                             </p>
                             <button className="btn btn-primary" id="lm3" >Learn more</button>
                         </div>
@@ -400,7 +400,7 @@ class Review extends React.Component{
                 </section>
                 <section id="review3" className="review" style={{display:"none"}}>
                     <div>
-                        <img src="cwomen.jpg" id="img"></img>
+                        <img src="cwomen2.jpg" id="img"></img>
                         <h1 id="txt" >Sanna Marine</h1>
                     </div>
                     <hr></hr>
@@ -422,6 +422,41 @@ class Review extends React.Component{
         )
     }
 } 
+class Footer extends React.Component{
+    render(){
+        return(
+            <section id="footer">
+                <div className="flex" >
+                    <div id="left">
+                        <h1>Contact Us</h1>
+                        <p>Contact with us any time any moment . we are always to here you .</p>
+                        <div className="flex">
+                            <button style={{backgroundColor:"red"}}>Email</button>
+                            <button style={{backgroundColor:"blue"}} >Facebook</button>
+                            <button style={{backgroundColor:"green"}} >Mobile</button>
+
+                        </div>
+                                                        
+                    </div>
+                    <div id="right">
+                        <h1>
+                            Send feedback
+                        </h1>
+                        <form>
+                            <input type="text" placeholder="Your Name" required></input>
+                            <br></br>
+                            <input type="email" placeholder="Your Email" required></input>
+                            <br></br>
+                            <input type="text" style={{ paddingBottom:"100px",width:"80%"}} placeholder="Your Opinion" required></input>
+                            <br></br>
+                            <input className="btn btn-primary" type="submit" style={{width:"50%", marginBottom:"50px"}}></input>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        )
+    }
+}
 function App() {
     return (
         <>
@@ -435,6 +470,7 @@ function App() {
             <Review />
             <Tempcontrol />
             <Tem />
+            <Footer />
 
 
 
