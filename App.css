@@ -184,6 +184,27 @@ body{
 .flex{
     display: flex;
 }
+#temp-control h1{
+    margin-top: 80px;
+    text-align: center;
+    margin-bottom: 50px;
+    width: 80%;
+    margin-left: 10%;
+}
+#temp-control #controlbtn{
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+}
+#temp-control #controlbtn h6{
+    width: 50%;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+#tg{
+    text-align: right;
+}
 
 
 @media  screen and (max-width:768px){
