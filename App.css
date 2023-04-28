@@ -232,6 +232,7 @@ body{
     }
     #reviewcard .box{
         height: 600px;
+        
     }
     .box{
         width: 80% ;
@@ -297,4 +298,95 @@ body{
     animation:shakeX;
     animation-duration: 5s;
    
+}
+#navbar{
+    background-color: whitesmoke;
+    display: flex;
+    height: 60px;
+
+    
+}
+#logo{
+    padding: 4px;
+    width: 10%;
+    margin-left: 10%;
+    margin-top: 10px;
+    margin-right: 5%;
+    color: blue;
+
+}
+*{
+    margin: 0;
+}
+#nav {
+    display: flex;
+    width: 70%;
+    
+}
+#nav a{
+    text-decoration: none;
+    padding: 20px;
+    color: black;
+}
+#nav a:hover{
+    color: blue;
+
+
+}
+#navbar img{
+    display: none;
+
+}
+#response{
+    display: none;
+}
+#cross{
+    display: none;
+}
+
+@media (max-width:768px){
+    #nav {
+        display: none;
+    
+        
+    }
+    #logo{
+        width: 85%;
+        margin-left: 5%;
+        
+    }
+    #navbar #barger{
+        display: block;
+        margin-right: 5%;
+        height: 30px;
+        margin-top: 15px;
+        width: 10%;
+        
+    
+    }
+    #cross{
+        display: none;
+        margin-right: 5%;
+        height: 30px;
+        margin-top: 15px;
+        width: 10%;
+       
+    }
+    #response{
+        display: none;
+        background-color: whitesmoke;
+        height: 350px;
+        width: 100%;
+        padding-top: 20px;
+    }
+    
+    #res-nav a{
+        text-decoration: none;
+        padding: 5px;
+        text-align: center;
+        width: 80%;
+        margin-left: 10%;
+        display: block;
+    }
+    
 }
