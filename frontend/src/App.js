@@ -7,13 +7,13 @@ import $ from "jquery"
 class Tempcontrol extends React.Component {
     componentDidMount() {
         $("#tg").click(() => {
-            $("#gallery").fadeIn("4000")
-            $("#tem-for-u").fadeOut("4000")
+            $("#gallery").fadeIn()
+            $("#tem-for-u").fadeOut()
         })
         $("#tfu").click(() => {
-            $("#gallery").fadeOut("4000")
-            $("#tem-for-u").fadeIn("4000")
-            
+            $("#gallery").fadeOut()
+            $("#tem-for-u").fadeIn()
+
 
 
         })
@@ -37,18 +37,19 @@ class Tempcontrol extends React.Component {
         return (
             <>
                 <section id="temp-control" style={{ display: "none" }}>
-                   <h1>Select your template and create something awosome</h1>
-                   <div id="controlbtn" >
+                    <h1>Select your template and create something awosome</h1>
+                    <div id="controlbtn" >
                         <h6 id="tfu" href="#navbar" >Templete for you</h6>
                         <h6 id="tg">Templete gallery</h6>
-                   </div>
-                   <Tem />
+                    </div>
+                    <Tem />
                 </section>
-               
+
             </>
         )
     }
 }
+
 
 class Tem extends React.Component {
 
@@ -58,37 +59,31 @@ class Tem extends React.Component {
                 <section id="tem-for-u">
                     <div className="contain">
                         <div className="box">
-                            <img src="contactimg.jpg" className="boximg"></img>
+                            <img alt="image" src="contactimg.jpg" className="boximg"></img>
                             <br></br>
                             <br>
                             </br>
-                            <h3 className="boxtxt">Contact Us</h3>
+                            <h3 className="boxtxt">Simple default</h3>
 
-                            <p className="boxtxt">
-                                Our team is available 24 hours for you . So don't hesitate to Contact us any time.
-                            </p>
+                           
                         </div>
                         <div className="box">
-                            <img src="privacyimg.jpg" className="boximg"></img>
+                            <img alt="image" src="privacyimg.jpg" className="boximg"></img>
                             <br></br>
                             <br>
                             </br>
-                            <h3 className="boxtxt">Our Privacy</h3>
+                            <h3 className="boxtxt">Simple green</h3>
 
-                            <p className="boxtxt">
-                                We are always working hard to secure your information.
-                            </p>
+                            
                         </div>
                         <div className="box" style={{ marginRight: "0" }}>
-                            <img src="temimg.jpg" className="boximg"></img>
+                            <img alt="image" src="temimg.jpg" className="boximg"></img>
                             <br></br>
                             <br>
                             </br>
-                            <h3 className="boxtxt">Templetes </h3>
+                            <h3 className="boxtxt">Simple orange </h3>
 
-                            <p className="boxtxt">
-                                Our designers know your expectation. Just choose and save your time.
-                            </p>
+                           
                         </div>
                     </div>
 
@@ -103,16 +98,16 @@ class Tem extends React.Component {
 class Navbar extends React.Component {
     componentDidMount() {
         $("#ntb").click(() => {
-            $("#promotion").fadeOut(2000)
-            $("#promoimg").fadeOut(2000)
-            $("#midnav").fadeOut(2000)
-            $("#baneradd").fadeOut(2000)
-            $("#reviewcard").fadeOut(2000)
+            $("#promotion").fadeOut()
+            $("#promoimg").fadeOut()
+            $("#midnav").fadeOut()
+            $("#baneradd").fadeOut()
+            $("#reviewcard").fadeOut()
             $("#review1").fadeOut()
             $("#review2").fadeOut()
             $("#review3").fadeOut()
-            $("#temp-control").fadeIn(4000)
-           
+            $("#temp-control").fadeIn()
+
         })
         $("#nrb").click(() => {
             $("#promotion").fadeIn()
@@ -136,7 +131,7 @@ class Navbar extends React.Component {
                 <section id="navbar">
                     <nav className="navbar navbar-expand-lg fixed-top bg-light">
                         <div className="container-fluid">
-                            <a className="navbar-brand text-primary" href="index.html">Resume.com</a>
+                            <a className="navbar-brand " style={{color:"blue"}} href="index.html">Resume.com</a>
                             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon"></span>
                             </button>
@@ -160,7 +155,10 @@ class Navbar extends React.Component {
                                     <li className="nav-item">
                                         <a className="nav-link  " href="#navbar" id="ntb">Templetes</a>
                                     </li>
-                                    <button className=" btn btn-primary " id="cbtn" onClick={() => { window.open("https://apurba2002.github.io/test/") }} >Try our new cover Creator</button>
+                                    <li className="nav-item">
+                                        <button className=" btn btn-primary " id="cbtn" onClick={() => { window.open("https://apurba2002.github.io/test/") }} >Try our new cover Creator</button>
+                                    </li>
+
                                 </ul>
                             </div>
                         </div>
@@ -222,7 +220,7 @@ class PromoImg extends React.Component {
             <section id="promoimg">
                 <div className="row">
                     <div className="col-12 col-lg-12 p-0">
-                        <img id="pimg" src="pngtree-e-learning-class-flat-illustration-png-png-image_3727055-removebg-preview.png"></img>
+                        <img alt="image" id="pimg" src="pngtree-e-learning-class-flat-illustration-png-png-image_3727055-removebg-preview.png"></img>
                     </div>
                 </div>
             </section>
@@ -236,7 +234,7 @@ class MidNav extends React.Component {
                 <section id="midnav">
                     <div className="contain">
                         <div className="box">
-                            <img src="contactimg.jpg" className="boximg"></img>
+                            <img alt="image" src="contactimg.jpg" className="boximg"></img>
                             <br></br>
                             <br>
                             </br>
@@ -247,7 +245,7 @@ class MidNav extends React.Component {
                             </p>
                         </div>
                         <div className="box">
-                            <img src="privacyimg.jpg" className="boximg"></img>
+                            <img alt="image" src="privacyimg.jpg" className="boximg"></img>
                             <br></br>
                             <br>
                             </br>
@@ -258,7 +256,7 @@ class MidNav extends React.Component {
                             </p>
                         </div>
                         <div className="box" style={{ marginRight: "0" }}>
-                            <img src="temimg.jpg" className="boximg"></img>
+                            <img alt="image" src="temimg.jpg" className="boximg"></img>
                             <br></br>
                             <br>
                             </br>
@@ -277,25 +275,27 @@ class MidNav extends React.Component {
 class Baneradd extends React.Component {
     componentDidMount() {
         $("#baneraddbtn").click(() => {
-            $("#promotion").fadeOut(2000)
-            $("#promoimg").fadeOut(2000)
-            $("#midnav").fadeOut(2000)
-            $("#baneradd").fadeOut(2000)
-            $("#reviewcard").fadeOut(2000)
-            $("#temp-control").fadeIn(4000)
+            $("#promotion").fadeOut()
+            $("#promoimg").fadeOut()
+            $("#midnav").fadeOut()
+            $("#baneradd").fadeOut()
+            $("#reviewcard").fadeOut()
+            $("#temp-control").fadeIn()
+            window.location.href="#navbar"
+            
 
         })
     }
     render() {
         return (
             <section id="baneradd">
-                <img src="baneradd.jpg"></img>
+                <img alt="image" src="baneradd.jpg"></img>
                 <div>
 
                     <h1>A resume is one of the keys to getting a good job</h1>
                     <br></br>
                     <p>So what are you waiting for? Create your one now.</p>
-                    <button className="btn btn-primary" id="baneraddbtn">Create Your Resume with Us</button>
+                    <button className="btn btn-primary"  id="baneraddbtn">Create Your Resume with Us</button>
                 </div>
 
 
@@ -306,34 +306,34 @@ class Baneradd extends React.Component {
 class Reviewcard extends React.Component {
     componentDidMount() {
         $("#lm1").click(() => {
-            $("#promotion").fadeOut(2000)
-            $("#promoimg").fadeOut(2000)
-            $("#midnav").fadeOut(2000)
-            $("#baneradd").fadeOut(2000)
-            $("#reviewcard").fadeOut(2000)
-            $("#review1").fadeIn(4000)
-            window.location.href="#navbar"
+            $("#promotion").fadeOut()
+            $("#promoimg").fadeOut()
+            $("#midnav").fadeOut()
+            $("#baneradd").fadeOut()
+            $("#reviewcard").fadeOut()
+            $("#review1").fadeIn()
+            window.location.href = "#navbar"
 
 
         })
         $("#lm2").click(() => {
-            $("#promotion").fadeOut(2000)
-            $("#promoimg").fadeOut(2000)
-            $("#midnav").fadeOut(2000)
-            $("#baneradd").fadeOut(2000)
-            $("#reviewcard").fadeOut(2000)
-            $("#review2").fadeIn(4000)
-            window.location.href="#navbar"
+            $("#promotion").fadeOut()
+            $("#promoimg").fadeOut()
+            $("#midnav").fadeOut()
+            $("#baneradd").fadeOut()
+            $("#reviewcard").fadeOut()
+            $("#review2").fadeIn()
+            window.location.href = "#navbar"
 
         })
         $("#lm3").click(() => {
-            $("#promotion").fadeOut(2000)
-            $("#promoimg").fadeOut(2000)
-            $("#midnav").fadeOut(2000)
-            $("#baneradd").fadeOut(2000)
-            $("#reviewcard").fadeOut(2000)
-            $("#review3").fadeIn(4000)
-            window.location.href="#navbar"
+            $("#promotion").fadeOut()
+            $("#promoimg").fadeOut()
+            $("#midnav").fadeOut()
+            $("#baneradd").fadeOut()
+            $("#reviewcard").fadeOut()
+            $("#review3").fadeIn()
+            window.location.href = "#navbar"
 
         })
     }
@@ -343,7 +343,7 @@ class Reviewcard extends React.Component {
                 <h1>Top reviews about us</h1>
                 <div className="contain">
                     <div className="box">
-                        <img src="cman.jpg" id="lm1img" className="boximg"></img>
+                        <img alt="image" src="cman.jpg" id="lm1img" className="boximg"></img>
                         <br></br>
                         <br>
                         </br>
@@ -355,7 +355,7 @@ class Reviewcard extends React.Component {
                         <button className="btn btn-primary" id="lm1">Learn more</button>
                     </div>
                     <div className="box">
-                        <img src="cstudent.jpg" className="boximg" id="lm2img" ></img>
+                        <img alt="image" src="cstudent.jpg" className="boximg" id="lm2img" ></img>
                         <br></br>
                         <br>
                         </br>
@@ -367,7 +367,7 @@ class Reviewcard extends React.Component {
                         <button className="btn btn-primary" id="lm2" >Learn more</button>
                     </div>
                     <div className="box" style={{ marginRight: "0" }}>
-                        <img src="cwomen2.jpg" className="boximg"></img>
+                        <img alt="image" src="cwomen2.jpg" className="boximg"></img>
                         <br></br>
                         <br>
                         </br>
@@ -393,7 +393,7 @@ class Review extends React.Component {
             <>
                 <section id="review1" className="review" style={{ display: "none" }}>
                     <div>
-                        <img src="cman.jpg" id="img"></img>
+                        <img alt="image" src="cman.jpg" id="img"></img>
                         <h1 id="txt" >Trump smith</h1>
                     </div>
                     <hr></hr>
@@ -404,7 +404,7 @@ class Review extends React.Component {
                 </section>
                 <section id="review2" className="review" style={{ display: "none" }}>
                     <div>
-                        <img src="cstudent.jpg" id="img"></img>
+                        <img alt="image" src="cstudent.jpg" id="img"></img>
                         <h1 id="txt" >Swift putin</h1>
                     </div>
                     <hr></hr>
@@ -422,7 +422,7 @@ class Review extends React.Component {
                 </section>
                 <section id="review3" className="review" style={{ display: "none" }}>
                     <div>
-                        <img src="cwomen2.jpg" id="img"></img>
+                        <img alt="image" src="cwomen2.jpg" id="img"></img>
                         <h1 id="txt" >Sanna Marine</h1>
                     </div>
                     <hr></hr>
@@ -453,9 +453,9 @@ class Footer extends React.Component {
                         <h1>Contact Us</h1>
                         <p>Contact with us any time any moment . we are always to here you .</p>
                         <div className="flex">
-                            <button style={{ backgroundColor: "red" }}>Email</button>
-                            <button style={{ backgroundColor: "blue" }} >Facebook</button>
-                            <button style={{ backgroundColor: "green" }} >Mobile</button>
+                            <button style={{ backgroundColor: "rgb(56, 56, 243)" }}>Email</button>
+                            <button style={{ backgroundColor: "rgb(56, 56, 243)" }} >Facebook</button>
+                            <button style={{ backgroundColor: "rgb(56, 56, 243)" }} >Mobile</button>
 
                         </div>
 
@@ -482,8 +482,8 @@ class Footer extends React.Component {
 function App() {
     return (
         <>
-            <Navbar />
 
+            <Navbar />
 
             <Promotion />
             <MidNav />
@@ -491,7 +491,7 @@ function App() {
             <Reviewcard />
             <Review />
             <Tempcontrol />
-      
+
             <Footer />
 
 
