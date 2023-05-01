@@ -1,9 +1,7 @@
 body{
     overflow-x: hidden;
 }
-.hover{
-    text-decoration: underline;
-}
+
 .animation_flip{
     animation: slideInDown;
     animation-duration: 2s;
@@ -201,12 +199,36 @@ body{
     margin-bottom: 20px;
     cursor: pointer;
 }
+#tfu:hover{
+    text-decoration: underline;
+}
+#tg:hover{
+    text-decoration: underline;
+}
+
 
 #tg{
     text-align: right;
 }
 #tem-for-u .box{
     height: 290px;
+}
+#gallery .box{
+    height: 290px;
+}
+#gallery{
+    margin-top: 50px;
+}
+#tem-for-u .box:hover{
+    background-color: black;
+    color: white;
+    transition: 1s;
+}
+
+#gallery .box:hover{
+    background-color: black;
+    color: white;
+    transition: 1s;
 }
 
 
@@ -326,6 +348,30 @@ body{
         height: 95px;
     }
     #tem-for-u .boxtxt{
+        font-size: 12px;
+        margin-top: 0px;
+    }
+    
+
+
+    #gallery .contain{
+        display: flex;
+        margin-left: 0;
+        margin-right: 0;
+        width: 80%;
+        margin-left: 10%;
+    }
+    #gallery .box{
+        width: 30% ;
+       margin-left: 0;
+        background-color: rgb(225, 225, 252);
+        border-radius: 10px;
+        height: 170px;
+    }
+    #gallery .boximg{
+        height: 95px;
+    }
+    #gallery .boxtxt{
         font-size: 12px;
         margin-top: 0px;
     }
