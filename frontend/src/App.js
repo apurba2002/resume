@@ -1,51 +1,108 @@
 
 import React from "react";
 
-import $ from "jquery"
 
+
+const showtemplete = () => {
+    document.querySelector("#temp-control").style.display="block";
+    document.querySelector("#promotion").style.display="none";
+    document.querySelector("#midnav").style.display="none";
+    document.querySelector("#baneradd").style.display="none";
+    document.querySelector("#reviewcard").style.display="none";
+    document.querySelector("#review1").style.display="none";
+    document.querySelector("#review2").style.display="none";
+    document.querySelector("#review3").style.display="none";
+    window.location.href="#"
+
+   
+  
+
+}
+const showreviewcard=()=>{
+    document.querySelector("#promotion").style.display="block";
+    document.querySelector("#midnav").style.display="block";
+    document.querySelector("#baneradd").style.display="flex";
+    document.querySelector("#reviewcard").style.display="block";
+    document.querySelector("#temp-control").style.display="none";
+    document.querySelector("#review1").style.display="none";
+    document.querySelector("#review2").style.display="none";
+    document.querySelector("#review3").style.display="none";
+
+}
+const showreview=(n)=>{
+    document.querySelector("#promotion").style.display="none";
+    document.querySelector("#midnav").style.display="none";
+    document.querySelector("#baneradd").style.display="none";
+    document.querySelector("#reviewcard").style.display="none";
+    document.querySelector("#temp-control").style.display="none";
+    n==="1"?   document.querySelector("#review1").style.display="block":
+    n==="2"? document.querySelector("#review2").style.display="block":
+    n==="3"?  document.querySelector("#review3").style.display="block": alert("k")
+    window.location.href="#"  
+  
+    
+   
+    
+}
 
 class Tempcontrol extends React.Component {
-    componentDidMount() {
-        $("#tg").click(() => {
-            $("#gallery").fadeIn()
-            $("#tem-for-u").fadeOut()
-        })
-        $("#tfu").click(() => {
-            $("#gallery").fadeOut()
-            $("#tem-for-u").fadeIn()
 
-
-
-        })
-        $("#tg").mouseover(() => {
-            $("#tg").addClass("hover")
-        })
-        $("#tg").mouseout(() => {
-            $("#tg").removeClass("hover")
-        })
-        $("#tfu").mouseover(() => {
-            $("#tfu").addClass("hover")
-        })
-        $("#tfu").mouseout(() => {
-            $("#tfu").removeClass("hover")
-        })
-
-
-    }
 
     render() {
+        const tg = () => {
+            document.querySelector("#gallery").style.display = "block";
+        }
+        const tfu = () => { document.querySelector("#gallery").style.display = "none"; }
         return (
             <>
                 <section id="temp-control" style={{ display: "none" }}>
                     <h1>Select your template and create something awosome</h1>
                     <div id="controlbtn" >
-                        <h6 id="tfu" href="#navbar" >Templete for you</h6>
-                        <h6 id="tg">Templete gallery</h6>
+                        <h6 id="tfu" href="#navbar" onClick={tfu} >Templete for you</h6>
+                        <h6 id="tg" onClick={tg} >Templete gallery</h6>
                     </div>
                     <Tem />
+                    <Gallery />
                 </section>
 
             </>
+        )
+    }
+}
+class Gallery extends React.Component {
+    render() {
+        return (
+            <section id="gallery" style={{ display: "none" }}>
+                <div className="contain">
+                    <div className="box">
+                        <img alt="image" src="contactimg.jpg" className="boximg"></img>
+                        <br></br>
+                        <br>
+                        </br>
+                        <h3 className="boxtxt">Simple default</h3>
+
+
+                    </div>
+                    <div className="box">
+                        <img alt="image" src="privacyimg.jpg" className="boximg"></img>
+                        <br></br>
+                        <br>
+                        </br>
+                        <h3 className="boxtxt">Simple green</h3>
+
+
+                    </div>
+                    <div className="box" style={{ marginRight: "0" }}>
+                        <img alt="image" src="temimg.jpg" className="boximg"></img>
+                        <br></br>
+                        <br>
+                        </br>
+                        <h3 className="boxtxt">Simple orange </h3>
+
+
+                    </div>
+                </div>
+            </section>
         )
     }
 }
@@ -65,7 +122,7 @@ class Tem extends React.Component {
                             </br>
                             <h3 className="boxtxt">Simple default</h3>
 
-                           
+
                         </div>
                         <div className="box">
                             <img alt="image" src="privacyimg.jpg" className="boximg"></img>
@@ -74,7 +131,7 @@ class Tem extends React.Component {
                             </br>
                             <h3 className="boxtxt">Simple green</h3>
 
-                            
+
                         </div>
                         <div className="box" style={{ marginRight: "0" }}>
                             <img alt="image" src="temimg.jpg" className="boximg"></img>
@@ -83,55 +140,31 @@ class Tem extends React.Component {
                             </br>
                             <h3 className="boxtxt">Simple orange </h3>
 
-                           
+
                         </div>
                     </div>
 
                 </section>
-                <section id="gallery" style={{ display: "none" }}>
+                
 
-                </section>
             </>
         )
     }
 }
 class Navbar extends React.Component {
-    componentDidMount() {
-        $("#ntb").click(() => {
-            $("#promotion").fadeOut()
-            $("#promoimg").fadeOut()
-            $("#midnav").fadeOut()
-            $("#baneradd").fadeOut()
-            $("#reviewcard").fadeOut()
-            $("#review1").fadeOut()
-            $("#review2").fadeOut()
-            $("#review3").fadeOut()
-            $("#temp-control").fadeIn()
-
-        })
-        $("#nrb").click(() => {
-            $("#promotion").fadeIn()
-            $("#promoimg").fadeIn()
-            $("#midnav").fadeIn()
-            $("#baneradd").fadeIn()
-            $("#reviewcard").fadeIn()
-            $("#temp-control").fadeOut()
-            $("#review1").fadeOut()
-            $("#review2").fadeOut()
-            $("#review3").fadeOut()
-
-
-
-        })
-    }
+   
+   
 
     render() {
+        
+        
+        
         return (
             <>
                 <section id="navbar">
                     <nav className="navbar navbar-expand-lg fixed-top bg-light">
                         <div className="container-fluid">
-                            <a className="navbar-brand " style={{color:"blue"}} href="index.html">Resume.com</a>
+                            <a className="navbar-brand " style={{ color: "blue" }} href="index.html">Resume.com</a>
                             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon"></span>
                             </button>
@@ -150,10 +183,10 @@ class Navbar extends React.Component {
                                         <a className="nav-link" href="#footer">Contact</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#reviewcard" id="nrb">Customer review</a>
+                                        <a className="nav-link" href="#reviewcard" id="nrb" onClick={showreviewcard} >Customer review</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link  " href="#navbar" id="ntb">Templetes</a>
+                                        <a className="nav-link  " href="#" id="ntb" onClick={showtemplete}>Templetes</a>
                                     </li>
                                     <li className="nav-item">
                                         <button className=" btn btn-primary " id="cbtn" onClick={() => { window.open("https://apurba2002.github.io/test/") }} >Try our new cover Creator</button>
@@ -175,18 +208,7 @@ class Navbar extends React.Component {
     }
 }
 class Promotion extends React.Component {
-    componentDidMount() {
-
-        $("#jump").click(() => {
-            $("#promotion").fadeOut(2000)
-            $("#promoimg").fadeOut(2000)
-            $("#midnav").fadeOut(2000)
-            $("#baneradd").fadeOut(2000)
-            $("#reviewcard").fadeOut(2000)
-            $("#temp-control").fadeIn(4000)
-
-        })
-    }
+  
     render() {
 
         return (
@@ -199,7 +221,7 @@ class Promotion extends React.Component {
                         <p className=" text-center   fs-1  " id="ptxt" >
                             Introducing the ultimate tool for crafting your perfect resume - Resume Creator!
                         </p>
-                        <button className="btn btn-primary" id="jump" >Start Now</button>
+                        <button className="btn btn-primary" id="jump" href="#"   onClick={showtemplete} >Start Now</button>
                     </div>
                     <div className="col-2 p-0">
 
@@ -229,11 +251,12 @@ class PromoImg extends React.Component {
 }
 class MidNav extends React.Component {
     render() {
+
         return (
             <>
                 <section id="midnav">
                     <div className="contain">
-                        <div className="box">
+                        <div className="box" onClick={() => { window.location.href = "#footer" }}>
                             <img alt="image" src="contactimg.jpg" className="boximg"></img>
                             <br></br>
                             <br>
@@ -255,12 +278,12 @@ class MidNav extends React.Component {
                                 We are always working hard to secure your information.
                             </p>
                         </div>
-                        <div className="box" style={{ marginRight: "0" }}>
+                        <div className="box" href="#" onClick={showtemplete} style={{ marginRight: "0" }}>
                             <img alt="image" src="temimg.jpg" className="boximg"></img>
                             <br></br>
                             <br>
                             </br>
-                            <h3 className="boxtxt">Templetes </h3>
+                            <h3 className="boxtxt" >Templetes </h3>
 
                             <p className="boxtxt">
                                 Our designers know your expectation. Just choose and save your time.
@@ -273,19 +296,8 @@ class MidNav extends React.Component {
     }
 }
 class Baneradd extends React.Component {
-    componentDidMount() {
-        $("#baneraddbtn").click(() => {
-            $("#promotion").fadeOut()
-            $("#promoimg").fadeOut()
-            $("#midnav").fadeOut()
-            $("#baneradd").fadeOut()
-            $("#reviewcard").fadeOut()
-            $("#temp-control").fadeIn()
-            window.location.href="#navbar"
-            
-
-        })
-    }
+  
+    
     render() {
         return (
             <section id="baneradd">
@@ -295,7 +307,7 @@ class Baneradd extends React.Component {
                     <h1>A resume is one of the keys to getting a good job</h1>
                     <br></br>
                     <p>So what are you waiting for? Create your one now.</p>
-                    <button className="btn btn-primary"  id="baneraddbtn">Create Your Resume with Us</button>
+                    <button className="btn btn-primary" id="baneraddbtn" onClick={showtemplete}>Create Your Resume with Us</button>
                 </div>
 
 
@@ -304,39 +316,7 @@ class Baneradd extends React.Component {
     }
 }
 class Reviewcard extends React.Component {
-    componentDidMount() {
-        $("#lm1").click(() => {
-            $("#promotion").fadeOut()
-            $("#promoimg").fadeOut()
-            $("#midnav").fadeOut()
-            $("#baneradd").fadeOut()
-            $("#reviewcard").fadeOut()
-            $("#review1").fadeIn()
-            window.location.href = "#navbar"
-
-
-        })
-        $("#lm2").click(() => {
-            $("#promotion").fadeOut()
-            $("#promoimg").fadeOut()
-            $("#midnav").fadeOut()
-            $("#baneradd").fadeOut()
-            $("#reviewcard").fadeOut()
-            $("#review2").fadeIn()
-            window.location.href = "#navbar"
-
-        })
-        $("#lm3").click(() => {
-            $("#promotion").fadeOut()
-            $("#promoimg").fadeOut()
-            $("#midnav").fadeOut()
-            $("#baneradd").fadeOut()
-            $("#reviewcard").fadeOut()
-            $("#review3").fadeIn()
-            window.location.href = "#navbar"
-
-        })
-    }
+    
     render() {
         return (
             <section id="reviewcard">
@@ -352,7 +332,7 @@ class Reviewcard extends React.Component {
                         <p className="boxtxt">
                             Resume.com is an excellent platform for anyone looking to create a professional resume quickly and easily.
                         </p>
-                        <button className="btn btn-primary" id="lm1">Learn more</button>
+                        <button className="btn btn-primary" id="lm1" onClick={()=>{showreview("1")}} >Learn more</button>
                     </div>
                     <div className="box">
                         <img alt="image" src="cstudent.jpg" className="boximg" id="lm2img" ></img>
@@ -364,7 +344,7 @@ class Reviewcard extends React.Component {
                         <p className="boxtxt" >
                             Resume.com is a top-notch  platform that provides users with everything they need to create a standout resume.
                         </p>
-                        <button className="btn btn-primary" id="lm2" >Learn more</button>
+                        <button className="btn btn-primary" id="lm2" onClick={()=>{showreview("2")}}  >Learn more</button>
                     </div>
                     <div className="box" style={{ marginRight: "0" }}>
                         <img alt="image" src="cwomen2.jpg" className="boximg"></img>
@@ -376,7 +356,7 @@ class Reviewcard extends React.Component {
                         <p className="boxtxt">
                             Resume.com is an exceptional platform for anyone looking to create a professional resume with ease.The site's interface is .....
                         </p>
-                        <button className="btn btn-primary" id="lm3" >Learn more</button>
+                        <button className="btn btn-primary" id="lm3" onClick={()=>{showreview("3")}}  >Learn more</button>
                     </div>
                 </div>
             </section>
@@ -384,9 +364,7 @@ class Reviewcard extends React.Component {
     }
 }
 class Review extends React.Component {
-    componentDidMount() {
-
-    }
+    
     render() {
 
         return (
@@ -491,6 +469,7 @@ function App() {
             <Reviewcard />
             <Review />
             <Tempcontrol />
+           
 
             <Footer />
 
