@@ -4,45 +4,45 @@ import React from "react";
 
 
 const showtemplete = () => {
-    document.querySelector("#temp-control").style.display="block";
-    document.querySelector("#promotion").style.display="none";
-    document.querySelector("#midnav").style.display="none";
-    document.querySelector("#baneradd").style.display="none";
-    document.querySelector("#reviewcard").style.display="none";
-    document.querySelector("#review1").style.display="none";
-    document.querySelector("#review2").style.display="none";
-    document.querySelector("#review3").style.display="none";
-    window.location.href="#"
+    document.querySelector("#temp-control").style.display = "block";
+    document.querySelector("#promotion").style.display = "none";
+    document.querySelector("#midnav").style.display = "none";
+    document.querySelector("#baneradd").style.display = "none";
+    document.querySelector("#reviewcard").style.display = "none";
+    document.querySelector("#review1").style.display = "none";
+    document.querySelector("#review2").style.display = "none";
+    document.querySelector("#review3").style.display = "none";
+    window.location.href = "#"
 
-   
-  
 
-}
-const showreviewcard=()=>{
-    document.querySelector("#promotion").style.display="block";
-    document.querySelector("#midnav").style.display="block";
-    document.querySelector("#baneradd").style.display="flex";
-    document.querySelector("#reviewcard").style.display="block";
-    document.querySelector("#temp-control").style.display="none";
-    document.querySelector("#review1").style.display="none";
-    document.querySelector("#review2").style.display="none";
-    document.querySelector("#review3").style.display="none";
+
 
 }
-const showreview=(n)=>{
-    document.querySelector("#promotion").style.display="none";
-    document.querySelector("#midnav").style.display="none";
-    document.querySelector("#baneradd").style.display="none";
-    document.querySelector("#reviewcard").style.display="none";
-    document.querySelector("#temp-control").style.display="none";
-    n==="1"?   document.querySelector("#review1").style.display="block":
-    n==="2"? document.querySelector("#review2").style.display="block":
-    n==="3"?  document.querySelector("#review3").style.display="block": alert("k")
-    window.location.href="#"  
-  
-    
-   
-    
+const showreviewcard = () => {
+    document.querySelector("#promotion").style.display = "block";
+    document.querySelector("#midnav").style.display = "block";
+    document.querySelector("#baneradd").style.display = "flex";
+    document.querySelector("#reviewcard").style.display = "block";
+    document.querySelector("#temp-control").style.display = "none";
+    document.querySelector("#review1").style.display = "none";
+    document.querySelector("#review2").style.display = "none";
+    document.querySelector("#review3").style.display = "none";
+
+}
+const showreview = (n) => {
+    document.querySelector("#promotion").style.display = "none";
+    document.querySelector("#midnav").style.display = "none";
+    document.querySelector("#baneradd").style.display = "none";
+    document.querySelector("#reviewcard").style.display = "none";
+    document.querySelector("#temp-control").style.display = "none";
+    n === "1" ? document.querySelector("#review1").style.display = "block" :
+        n === "2" ? document.querySelector("#review2").style.display = "block" :
+            n === "3" ? document.querySelector("#review3").style.display = "block" : alert("k")
+    window.location.href = "#"
+
+
+
+
 }
 
 class Tempcontrol extends React.Component {
@@ -145,20 +145,20 @@ class Tem extends React.Component {
                     </div>
 
                 </section>
-                
+
 
             </>
         )
     }
 }
 class Navbar extends React.Component {
-   
-   
+
+
 
     render() {
-        
-        
-        
+
+
+
         return (
             <>
                 <section id="navbar">
@@ -208,7 +208,7 @@ class Navbar extends React.Component {
     }
 }
 class Promotion extends React.Component {
-  
+
     render() {
 
         return (
@@ -221,7 +221,7 @@ class Promotion extends React.Component {
                         <p className=" text-center   fs-1  " id="ptxt" >
                             Introducing the ultimate tool for crafting your perfect resume - Resume Creator!
                         </p>
-                        <button className="btn btn-primary" id="jump" href="#"   onClick={showtemplete} >Start Now</button>
+                        <button className="btn btn-primary" id="jump" href="#" onClick={showtemplete} >Start Now</button>
                     </div>
                     <div className="col-2 p-0">
 
@@ -296,8 +296,8 @@ class MidNav extends React.Component {
     }
 }
 class Baneradd extends React.Component {
-  
-    
+
+
     render() {
         return (
             <section id="baneradd">
@@ -316,7 +316,7 @@ class Baneradd extends React.Component {
     }
 }
 class Reviewcard extends React.Component {
-    
+
     render() {
         return (
             <section id="reviewcard">
@@ -332,7 +332,7 @@ class Reviewcard extends React.Component {
                         <p className="boxtxt">
                             Resume.com is an excellent platform for anyone looking to create a professional resume quickly and easily.
                         </p>
-                        <button className="btn btn-primary" id="lm1" onClick={()=>{showreview("1")}} >Learn more</button>
+                        <button className="btn btn-primary" id="lm1" onClick={() => { showreview("1") }} >Learn more</button>
                     </div>
                     <div className="box">
                         <img alt="image" src="cstudent.jpg" className="boximg" id="lm2img" ></img>
@@ -344,7 +344,7 @@ class Reviewcard extends React.Component {
                         <p className="boxtxt" >
                             Resume.com is a top-notch  platform that provides users with everything they need to create a standout resume.
                         </p>
-                        <button className="btn btn-primary" id="lm2" onClick={()=>{showreview("2")}}  >Learn more</button>
+                        <button className="btn btn-primary" id="lm2" onClick={() => { showreview("2") }}  >Learn more</button>
                     </div>
                     <div className="box" style={{ marginRight: "0" }}>
                         <img alt="image" src="cwomen2.jpg" className="boximg"></img>
@@ -356,7 +356,7 @@ class Reviewcard extends React.Component {
                         <p className="boxtxt">
                             Resume.com is an exceptional platform for anyone looking to create a professional resume with ease.The site's interface is .....
                         </p>
-                        <button className="btn btn-primary" id="lm3" onClick={()=>{showreview("3")}}  >Learn more</button>
+                        <button className="btn btn-primary" id="lm3" onClick={() => { showreview("3") }}  >Learn more</button>
                     </div>
                 </div>
             </section>
@@ -364,7 +364,7 @@ class Reviewcard extends React.Component {
     }
 }
 class Review extends React.Component {
-    
+
     render() {
 
         return (
@@ -424,6 +424,35 @@ class Review extends React.Component {
 }
 class Footer extends React.Component {
     render() {
+        const PostData =async(e)=>{
+            e.preventDefault()
+
+            let name=document.querySelector("#name").value;
+            let email=document.querySelector("#email").value;
+            let message=document.querySelector("#message").value;
+
+
+            const res=await fetch("https://resume-ba8c7-default-rtdb.asia-southeast1.firebasedatabase.app/contactform.json",
+            {
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify({
+                 name,
+                 email,
+                 message,
+               
+                
+                })
+             })
+             document.querySelector("#name").value="";
+             document.querySelector("#email").value="";
+             document.querySelector("#message").value="";
+             alert("Thanks For Your FeedBack")
+        }
+
+
         return (
             <section id="footer">
                 <div className="flex" >
@@ -442,14 +471,15 @@ class Footer extends React.Component {
                         <h1>
                             Send feedback
                         </h1>
-                        <form>
-                            <input type="text" placeholder="Your Name" required></input>
+                        <form onSubmit={PostData} >
+                            <input type="text" id="name" placeholder="Your Name" required></input>
                             <br></br>
-                            <input type="email" placeholder="Your Email" required></input>
+                            <input type="email" id="email" placeholder="Your Email" required></input>
                             <br></br>
-                            <input type="text" style={{ paddingBottom: "100px", width: "80%" }} placeholder="Your Opinion" required></input>
+                            <input type="text" id="message" style={{ paddingBottom: "100px", width: "80%" }} placeholder="Your Opinion" required></input>
                             <br></br>
-                            <input className="btn btn-primary" type="submit" style={{ width: "50%", marginBottom: "50px" }}></input>
+                
+                            <button className="btn btn-primary"  style={{ width: "50%", marginBottom: "50px" ,marginLeft:"10%",marginTop:"20px" }} type="submit " >Submit</button>
                         </form>
                     </div>
                 </div>
@@ -457,6 +487,7 @@ class Footer extends React.Component {
         )
     }
 }
+
 function App() {
     return (
         <>
@@ -469,7 +500,7 @@ function App() {
             <Reviewcard />
             <Review />
             <Tempcontrol />
-           
+
 
             <Footer />
 
