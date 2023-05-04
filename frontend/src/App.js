@@ -289,6 +289,7 @@ class MidNav extends React.Component {
                                 Our designers know your expectation. Just choose and save your time.
                             </p>
                         </div>
+
                     </div>
                 </section>
             </>
@@ -424,32 +425,32 @@ class Review extends React.Component {
 }
 class Footer extends React.Component {
     render() {
-        const PostData =async(e)=>{
+        const PostData = async (e) => {
             e.preventDefault()
 
-            let name=document.querySelector("#name").value;
-            let email=document.querySelector("#email").value;
-            let message=document.querySelector("#message").value;
+            let name = document.querySelector("#name").value;
+            let email = document.querySelector("#email").value;
+            let message = document.querySelector("#message").value;
 
 
-            const res=await fetch("https://resume-ba8c7-default-rtdb.asia-southeast1.firebasedatabase.app/contactform.json",
-            {
-                method:'POST',
-                headers:{
-                    'Content-Type':'application/json'
-                },
-                body:JSON.stringify({
-                 name,
-                 email,
-                 message,
-               
-                
+            const res = await fetch("https://resume-ba8c7-default-rtdb.asia-southeast1.firebasedatabase.app/contactform.json",
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name,
+                        email,
+                        message,
+
+
+                    })
                 })
-             })
-             document.querySelector("#name").value="";
-             document.querySelector("#email").value="";
-             document.querySelector("#message").value="";
-             alert("Thanks For Your FeedBack")
+            document.querySelector("#name").value = "";
+            document.querySelector("#email").value = "";
+            document.querySelector("#message").value = "";
+            alert("Thanks For Your FeedBack")
         }
 
 
@@ -478,12 +479,173 @@ class Footer extends React.Component {
                             <br></br>
                             <input type="text" id="message" style={{ paddingBottom: "100px", width: "80%" }} placeholder="Your Opinion" required></input>
                             <br></br>
-                
-                            <button className="btn btn-primary"  style={{ width: "50%", marginBottom: "50px" ,marginLeft:"10%",marginTop:"20px" }} type="submit " >Submit</button>
+
+                            <button className="btn btn-primary" style={{ width: "50%", marginBottom: "50px", marginLeft: "10%", marginTop: "20px" }} type="submit " >Submit</button>
                         </form>
                     </div>
                 </div>
             </section>
+        )
+    }
+}
+class Personalform extends React.Component{
+    render(){
+        return(
+            <form>
+                            <div>
+                                <h2>Personal information</h2>
+                                <br></br>
+                                <input type="name" required placeholder="Your name here"></input>
+
+                                <input type="name" placeholder="Your profesional subtitle here"></input>
+                                <button type="submit" style={{ width: "35%", }} className="btn btn-primary" id="personal-submit">Submit</button>
+                                <div className="btn-contain">
+
+                                    <button className="btn btn-success" style={{ width: "25%", marginRight: "1%" }} id="personal-edit">Edit data </button>
+                                    <button className="btn btn-primary " style={{ width: "74%" }} disabled id="personal-msg">Data successfully added to the server</button>
+                                </div>
+
+                            </div>
+                            
+                        </form>
+        )
+    }
+}
+class Experienceform extends React.Component{
+    render(){
+        const exgrp1 = () => {
+            document.querySelector("#ex-grp-1").style.display = "block"
+            document.querySelector("#ex-del-btn-1").style.display = "block"
+            document.querySelector("#end-date").style.display = "block"
+            document.querySelector("#end-date-label").style.display = "block"
+            document.querySelector("#end-date-btn").style.display = "flex"
+
+        }
+        const exgrp2 = () => {
+            document.querySelector("#ex-grp-2").style.display = "block"
+            document.querySelector("#ex-del-btn-2").style.display = "block"
+            document.querySelector("#end-date-2").style.display = "block"
+            document.querySelector("#end-date-label-2").style.display = "block"
+            document.querySelector("#end-date-btn-2").style.display = "flex"
+            window.location.href = "#ex-grp-2"
+
+        }
+        const exgrp3 = () => {
+            document.querySelector("#ex-grp-3").style.display = "block"
+            document.querySelector("#ex-del-btn-3").style.display = "block"
+            document.querySelector("#end-date-3").style.display = "block"
+            document.querySelector("#end-date-label-3").style.display = "block"
+            document.querySelector("#end-date-btn-3").style.display = "flex"
+            window.location.href = "#ex-grp-3"
+
+        }
+
+        return(
+            <div>
+            <h2>Experience</h2>
+            <br></br>
+            <div style={{ display: "flex" }}>
+                <button className="btn btn-primary" onClick={exgrp1}>Add experience 1</button>
+                <button className="btn btn-danger" id="ex-del-btn-1" style={{ marginLeft: "10px", display: "none" }} onClick={() => { document.querySelector("#ex-grp-1").style.display = "none"; document.querySelector("#ex-del-btn-1").style.display = "none" }} >Delete</button>
+            </div>
+
+            <div id="ex-grp-1">
+                <br></br>
+                <br></br>
+                <input type="name" placeholder="Company name here"></input>
+                <input type="name" placeholder="Company location here"></input>
+                <input type="name" placeholder="Your Job tittle on that company"></input>
+                <label className="text-primary"><h5>Starting date on this company</h5></label>
+                <input type="date" name="start-date"  ></input>
+                <label id="end-date-label" className="text-primary"><h5>Ending date on this company</h5></label>
+                <input type="date" id="end-date" name="end-date"  ></input><span><button id="end-date-btn" onClick={() => {
+                    document.querySelector("#end-date").style.display = "none"
+                    document.querySelector("#end-date-label").style.display = "none"
+                    document.querySelector("#end-date-btn").style.display = "none"
+                }} className=" btn btn-primary " >Still working</button></span>
+            </div>
+            <br></br>
+
+
+
+
+
+            <div style={{ display: "flex" }}>
+                <button className="btn btn-primary" onClick={exgrp2}>Add experience 2</button>
+                <button className="btn btn-danger" id="ex-del-btn-2" style={{ marginLeft: "10px", display: "none" }} onClick={() => { document.querySelector("#ex-grp-2").style.display = "none"; document.querySelector("#ex-del-btn-2").style.display = "none" }} >Delete</button>
+            </div>
+
+            <div id="ex-grp-2">
+                <br></br>
+                <br></br>
+                <input type="name" placeholder="Company name here"></input>
+                <input type="name" placeholder="Company location here"></input>
+                <input type="name" placeholder="Your Job tittle on that company"></input>
+                <label className="text-primary"><h5>Starting date on this company</h5></label>
+                <input type="date" name="start-date"  ></input>
+                <label id="end-date-label-2" className="text-primary"><h5>Ending date on this company</h5></label>
+                <input type="date" id="end-date-2" name="end-date"  ></input><span><button id="end-date-btn-2" onClick={() => {
+                    document.querySelector("#end-date-2").style.display = "none"
+                    document.querySelector("#end-date-label-2").style.display = "none"
+                    document.querySelector("#end-date-btn-2").style.display = "none"
+                }} className=" btn btn-primary " >Still working</button></span>
+                <br></br>
+                <br></br>
+            </div>
+            <br></br>
+            
+
+
+
+            <div style={{ display: "flex" }}>
+                <button className="btn btn-primary" onClick={exgrp3}>Add experience 3</button>
+                <button className="btn btn-danger" id="ex-del-btn-3" style={{ marginLeft: "10px", display: "none" }} onClick={() => { document.querySelector("#ex-grp-3").style.display = "none"; document.querySelector("#ex-del-btn-3").style.display = "none" }} >Delete</button>
+            </div>
+
+            <div id="ex-grp-3">
+                <br></br>
+                <br></br>
+                <input type="name" placeholder="Company name here"></input>
+                <input type="name" placeholder="Company location here"></input>
+                <input type="name" placeholder="Your Job tittle on that company"></input>
+                <label className="text-primary"><h5>Starting date on this company</h5></label>
+                <input type="date" name="start-date"  ></input>
+                <label id="end-date-label-3" className="text-primary"><h5>Ending date on this company</h5></label>
+                <input type="date" id="end-date-3" name="end-date"  ></input><span><button id="end-date-btn-3" onClick={() => {
+                    document.querySelector("#end-date-3").style.display = "none"
+                    document.querySelector("#end-date-label-3").style.display = "none"
+                    document.querySelector("#end-date-btn-3").style.display = "none"
+                }} className=" btn btn-primary " >Still working</button></span>
+            </div>
+        </div>
+        )
+    }
+}
+class Input extends React.Component {
+    render() {
+       
+        return (
+            <>
+
+                <div id="tool">
+
+                    <h1>
+                        Enter your details here.
+                    </h1>
+
+                    <div id="tool-left">
+                        
+                        <Personalform />
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <Experienceform />
+
+                       
+                    </div>
+
+                </div>
+            </>
         )
     }
 }
@@ -500,7 +662,7 @@ function App() {
             <Reviewcard />
             <Review />
             <Tempcontrol />
-
+            <Input />
 
             <Footer />
 
