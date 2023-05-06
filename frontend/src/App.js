@@ -3,11 +3,15 @@ import React from "react";
 import { BsFacebook } from "react-icons/bs";
 import { MdAlternateEmail } from "react-icons/md";
 import { MdCall } from "react-icons/md";
-import { FcContacts} from "react-icons/fc";
+import { MdLanguage } from "react-icons/md";
+import { FcContacts } from "react-icons/fc";
 import { BsGithub } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 
 import { BsInstagram } from "react-icons/bs";
+import { FaLanguage } from "react-icons/fa";
+import { SiSkillshare } from "react-icons/si";
+import { GiSkills } from "react-icons/gi";
 
 
 
@@ -636,34 +640,77 @@ function Address(params) {
     )
 }
 const Contact = () => {
-    
+
     return (
         <div>
-            <h2><FcContacts style={{width:"10%",height:"40px",marginRight:"1%",color:"green"}} />Contacts</h2>
+            <h2><FcContacts style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} />Contacts</h2>
             <hr></hr>
             <br></br>
-            <MdCall style={{width:"10%",height:"40px",marginRight:"1%",color:"green"}} /><span><input type="tel" required placeholder="Enter your mobile number" ></input></span>
-            
-            
+            <MdCall style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="tel" required placeholder="Enter your mobile number" ></input></span>
+
+
             <br></br>
-            <MdAlternateEmail style={{width:"10%",height:"40px",marginRight:"1%",color:"red"}} /><span><input type="email" required placeholder="Enter your email address" ></input></span>
-            
-            
+            <MdAlternateEmail style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /><span><input type="email" required placeholder="Enter your email address" ></input></span>
+
+
             <br></br>
-            <BsFacebook style={{width:"10%",height:"40px",marginRight:"1%",color:"blue"}} /><span><input type="url" placeholder="Enter your facebbok address" ></input></span>
+            <BsFacebook style={{ width: "10%", height: "40px", marginRight: "1%", color: "blue" }} /><span><input type="url" placeholder="Enter your facebbok address" ></input></span>
             <br></br>
-            <BsGithub style={{width:"10%",height:"40px",marginRight:"1%",color:"black"}} /><span><input type="url" placeholder="Enter your github account" ></input></span>
-            
+            <BsGithub style={{ width: "10%", height: "40px", marginRight: "1%", color: "black" }} /><span><input type="url" placeholder="Enter your github account" ></input></span>
+
             <br></br>
-            <BsLinkedin style={{width:"10%",height:"40px",marginRight:"1%",color:"blue"}} /><span><input type="url" placeholder="Enter your linkedin account" ></input></span>
-            
+            <BsLinkedin style={{ width: "10%", height: "40px", marginRight: "1%", color: "blue" }} /><span><input type="url" placeholder="Enter your linkedin account" ></input></span>
+
             <br></br>
-            <BsInstagram style={{width:"10%",height:"40px",marginRight:"1%",color:"#d62976 "}} /><span><input type="url" placeholder="Enter your instagram account" ></input></span>
-            
-          
-            
-            
-          
+            <BsInstagram style={{ width: "10%", height: "40px", marginRight: "1%", color: "#d62976 " }} /><span><input type="url" placeholder="Enter your instagram account" ></input></span>
+
+
+
+
+
+        </div>
+    )
+}
+const Language = () => {
+    return (
+        <div>
+            <h2><MdLanguage style={{ width: "10%", height: "40px", marginRight: "1%", color: "orange" }} />Language</h2>
+            <hr></hr>
+            <br></br>
+            <FaLanguage style={{ width: "10%", height: "40px", marginRight: "1%", color: "orange" }} /><span><input type="text" required placeholder=" Main Language "></input></span>
+            <FaLanguage style={{ width: "10%", height: "40px", marginRight: "1%", color: "orange" }} /><span><input type="text" placeholder="Additional Language 1"></input></span>
+            <FaLanguage style={{ width: "10%", height: "40px", marginRight: "1%", color: "orange" }} /><span><input type="text" placeholder="Additional Language 3"></input></span>
+            <FaLanguage style={{ width: "10%", height: "40px", marginRight: "1%", color: "orange" }} /><span><input type="text" placeholder="Additional Language 2"></input></span>
+            <FaLanguage style={{ width: "10%", height: "40px", marginRight: "1%", color: "orange" }} /><span><input type="text" placeholder="Additional Language 4"></input></span>
+        </div>
+    )
+}
+const Skill = () => {
+    return (
+        <div>
+            <h2><SiSkillshare style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} />Skills</h2>
+            <hr></hr>
+            <br></br>
+            <div style={{ display: "flex" }}>
+                <div style={{ width: "45%" }}>
+                    <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" required placeholder=" Skill no:1 "></input></span>
+                    <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:2 "></input></span>
+                    <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:3 "></input></span>
+                    <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:4 "></input></span>
+                    <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:5 "></input></span>
+
+                </div>
+                <div style={{ marginLeft: "10%", width: "45%" }}>
+                    <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:6 "></input></span>
+                    <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:7 "></input></span>
+                    <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:8 "></input></span>
+                    <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:9 "></input></span>
+                    <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:10 "></input></span>
+
+                </div>
+            </div>
+
+
         </div>
     )
 }
@@ -682,7 +729,7 @@ class Input extends React.Component {
 
 
                         <form>
-                            <div style={{ display: "flex" }}>
+                            <div id="tool-contain">
                                 <div id="tool-left">
 
 
@@ -699,6 +746,12 @@ class Input extends React.Component {
                                 </div>
                                 <div id="tool-right">
                                     <Contact />
+                                    <br></br>
+                                    <br></br>
+                                    <Language />
+                                    <br></br>
+                                    <br></br>
+                                    <Skill />
                                 </div>
                             </div>
 
