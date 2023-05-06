@@ -236,46 +236,48 @@ body{
     margin-top: 80px;
     
 }
-#tool form{
-    display: flex;
-}
+
 #tool-left{
     width: 45%;
+}
+#tool-right{
+    width: 45%;
+    margin-left: 10%;
 }
 #tool h1{
     margin-bottom: 50px;
     text-align: center;
 }
 #tool input{
-    width: 100%;
+    width: 89%;
     height: 60px;
     border: 1px solid lightgray;
     border-radius: 10px;
     margin-bottom: 20px;
 }
-#ex-grp-1{
-    display: none;
-    margin-bottom: 50px;
+.fresher-link{
+    font-size: 12px;
+    margin-left: 10px;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
 }
 #ex-grp-2{
-    
     display: none;
 }
 #ex-grp-3{
-    
     display: none;
 }
-.btn-contain{
-    display: flex;
-    width: 100%;
-}
-.btn-contain button{
-    height: 40px;
-}
-#personal-msg{
+#edu-grp-2{
     display: none;
 }
-#personal-edit{
+#edu-grp-3{
+    display: none;
+}
+#edu-grp-4{
+    display: none;
+}
+#edu-grp-5{
     display: none;
 }
 

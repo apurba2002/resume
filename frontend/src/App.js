@@ -1,5 +1,13 @@
 
 import React from "react";
+import { BsFacebook } from "react-icons/bs";
+import { MdAlternateEmail } from "react-icons/md";
+import { MdCall } from "react-icons/md";
+import { FcContacts} from "react-icons/fc";
+import { BsGithub } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
+
+import { BsInstagram } from "react-icons/bs";
 
 
 
@@ -44,6 +52,7 @@ const showreview = (n) => {
 
 
 }
+
 
 class Tempcontrol extends React.Component {
 
@@ -488,160 +497,213 @@ class Footer extends React.Component {
         )
     }
 }
-class Personalform extends React.Component{
-    render(){
-        return(
-            <form>
-                            <div>
-                                <h2>Personal information</h2>
-                                <br></br>
-                                <input type="name" required placeholder="Your name here"></input>
+class Personalform extends React.Component {
+    render() {
 
-                                <input type="name" placeholder="Your profesional subtitle here"></input>
-                                <button type="submit" style={{ width: "35%", }} className="btn btn-primary" id="personal-submit">Submit</button>
-                                <div className="btn-contain">
 
-                                    <button className="btn btn-success" style={{ width: "25%", marginRight: "1%" }} id="personal-edit">Edit data </button>
-                                    <button className="btn btn-primary " style={{ width: "74%" }} disabled id="personal-msg">Data successfully added to the server</button>
-                                </div>
+        return (
+            <div>
+                <h2>Personal information</h2>
+                <hr></hr>
+                <br>
+                </br>
+                <input type="text" required placeholder=" Your name here"></input>
+                <input type="text" placeholder=" Your professional subtittle here"></input>
+            </div>
 
-                            </div>
-                            
-                        </form>
         )
     }
 }
-class Experienceform extends React.Component{
-    render(){
-        const exgrp1 = () => {
-            document.querySelector("#ex-grp-1").style.display = "block"
-            document.querySelector("#ex-del-btn-1").style.display = "block"
-            document.querySelector("#end-date").style.display = "block"
-            document.querySelector("#end-date-label").style.display = "block"
-            document.querySelector("#end-date-btn").style.display = "flex"
+class Experienceform extends React.Component {
+    render() {
 
-        }
-        const exgrp2 = () => {
-            document.querySelector("#ex-grp-2").style.display = "block"
-            document.querySelector("#ex-del-btn-2").style.display = "block"
-            document.querySelector("#end-date-2").style.display = "block"
-            document.querySelector("#end-date-label-2").style.display = "block"
-            document.querySelector("#end-date-btn-2").style.display = "flex"
-            window.location.href = "#ex-grp-2"
 
-        }
-        const exgrp3 = () => {
-            document.querySelector("#ex-grp-3").style.display = "block"
-            document.querySelector("#ex-del-btn-3").style.display = "block"
-            document.querySelector("#end-date-3").style.display = "block"
-            document.querySelector("#end-date-label-3").style.display = "block"
-            document.querySelector("#end-date-btn-3").style.display = "flex"
-            window.location.href = "#ex-grp-3"
-
-        }
-
-        return(
+        return (
             <div>
-            <h2>Experience</h2>
-            <br></br>
-            <div style={{ display: "flex" }}>
-                <button className="btn btn-primary" onClick={exgrp1}>Add experience 1</button>
-                <button className="btn btn-danger" id="ex-del-btn-1" style={{ marginLeft: "10px", display: "none" }} onClick={() => { document.querySelector("#ex-grp-1").style.display = "none"; document.querySelector("#ex-del-btn-1").style.display = "none" }} >Delete</button>
+                <h2>Experience<span className="fresher-link" onClick={() => {
+                    document.querySelector("#ex-grp-1-company-name").value = "Fresher"
+                }}>(if you are a fresher click here)</span></h2>
+                <hr></hr>
+                <br></br>
+                <div id="ex-grp-1" >
+                    <h5>Experience 1</h5>
+                    <input type="text" required id="ex-grp-1-company-name" placeholder=" Company name here"></input>
+                    <input type="text" placeholder=" Company location"></input>
+                    <input type="text" placeholder=" Job tittle"></input>
+                    <input type="text" placeholder=" Start Date (dd-mm-yyyy)"></input>
+                    <input type="text" placeholder=" End Date (dd-mm-yyyy)"></input>
+                    <a href="#ex-grp-2" onClick={() => { document.querySelector("#ex-grp-2").style.display = "block"; }} className="btn btn-primary ">Add more</a>
+
+
+
+                </div>
+                <br>
+                </br>
+                <div id="ex-grp-2">
+                    <h5>Experience 2</h5>
+                    <input type="text" placeholder=" Company name here"></input>
+                    <input type="text" placeholder=" Company location"></input>
+                    <input type="text" placeholder=" Job tittle"></input>
+                    <input type="text" placeholder=" Start Date (dd-mm-yyyy)"></input>
+                    <input type="text" placeholder=" End Date (dd-mm-yyyy)"></input>
+                    <a href="#ex-grp-3" onClick={() => { document.querySelector("#ex-grp-3").style.display = "block"; }} className="btn btn-primary ">Add more</a>
+                    <a href="#ex-grp-1" onClick={() => { document.querySelector("#ex-grp-2").style.display = "none"; }} className="btn btn-danger " style={{ marginLeft: "10px" }}>Delete</a>
+                </div>
+                <br></br>
+                <div id="ex-grp-3">
+                    <h5>Experience 3</h5>
+                    <input type="text" placeholder=" Company name here"></input>
+                    <input type="text" placeholder=" Company location"></input>
+                    <input type="text" placeholder=" Job tittle"></input>
+                    <input type="text" placeholder=" Start Date (dd-mm-yyyy)"></input>
+                    <input type="text" placeholder=" End Date (dd-mm-yyyy)"></input>
+
+                    <a href="#ex-grp-2" onClick={() => { document.querySelector("#ex-grp-3").style.display = "none"; }} className="btn btn-danger " >Delete</a>
+
+                </div>
             </div>
-
-            <div id="ex-grp-1">
-                <br></br>
-                <br></br>
-                <input type="name" placeholder="Company name here"></input>
-                <input type="name" placeholder="Company location here"></input>
-                <input type="name" placeholder="Your Job tittle on that company"></input>
-                <label className="text-primary"><h5>Starting date on this company</h5></label>
-                <input type="date" name="start-date"  ></input>
-                <label id="end-date-label" className="text-primary"><h5>Ending date on this company</h5></label>
-                <input type="date" id="end-date" name="end-date"  ></input><span><button id="end-date-btn" onClick={() => {
-                    document.querySelector("#end-date").style.display = "none"
-                    document.querySelector("#end-date-label").style.display = "none"
-                    document.querySelector("#end-date-btn").style.display = "none"
-                }} className=" btn btn-primary " >Still working</button></span>
-            </div>
-            <br></br>
-
-
-
-
-
-            <div style={{ display: "flex" }}>
-                <button className="btn btn-primary" onClick={exgrp2}>Add experience 2</button>
-                <button className="btn btn-danger" id="ex-del-btn-2" style={{ marginLeft: "10px", display: "none" }} onClick={() => { document.querySelector("#ex-grp-2").style.display = "none"; document.querySelector("#ex-del-btn-2").style.display = "none" }} >Delete</button>
-            </div>
-
-            <div id="ex-grp-2">
-                <br></br>
-                <br></br>
-                <input type="name" placeholder="Company name here"></input>
-                <input type="name" placeholder="Company location here"></input>
-                <input type="name" placeholder="Your Job tittle on that company"></input>
-                <label className="text-primary"><h5>Starting date on this company</h5></label>
-                <input type="date" name="start-date"  ></input>
-                <label id="end-date-label-2" className="text-primary"><h5>Ending date on this company</h5></label>
-                <input type="date" id="end-date-2" name="end-date"  ></input><span><button id="end-date-btn-2" onClick={() => {
-                    document.querySelector("#end-date-2").style.display = "none"
-                    document.querySelector("#end-date-label-2").style.display = "none"
-                    document.querySelector("#end-date-btn-2").style.display = "none"
-                }} className=" btn btn-primary " >Still working</button></span>
-                <br></br>
-                <br></br>
-            </div>
-            <br></br>
-            
-
-
-
-            <div style={{ display: "flex" }}>
-                <button className="btn btn-primary" onClick={exgrp3}>Add experience 3</button>
-                <button className="btn btn-danger" id="ex-del-btn-3" style={{ marginLeft: "10px", display: "none" }} onClick={() => { document.querySelector("#ex-grp-3").style.display = "none"; document.querySelector("#ex-del-btn-3").style.display = "none" }} >Delete</button>
-            </div>
-
-            <div id="ex-grp-3">
-                <br></br>
-                <br></br>
-                <input type="name" placeholder="Company name here"></input>
-                <input type="name" placeholder="Company location here"></input>
-                <input type="name" placeholder="Your Job tittle on that company"></input>
-                <label className="text-primary"><h5>Starting date on this company</h5></label>
-                <input type="date" name="start-date"  ></input>
-                <label id="end-date-label-3" className="text-primary"><h5>Ending date on this company</h5></label>
-                <input type="date" id="end-date-3" name="end-date"  ></input><span><button id="end-date-btn-3" onClick={() => {
-                    document.querySelector("#end-date-3").style.display = "none"
-                    document.querySelector("#end-date-label-3").style.display = "none"
-                    document.querySelector("#end-date-btn-3").style.display = "none"
-                }} className=" btn btn-primary " >Still working</button></span>
-            </div>
-        </div>
         )
     }
+}
+function Education() {
+    return (
+        <div>
+            <h3>Education<span className="fresher-link" onClick={() => {
+                document.querySelector("#edu-grp-1-degree-name").value = "Under SSC or equavalent "
+            }}>(if you are under SSC or equavalent click here)</span></h3>
+            <hr></hr>
+            <br></br>
+            <div id="edu-grp-1">
+                <h5>Degree no:1</h5>
+                <input type="text" id="edu-grp-1-degree-name" required placeholder="Name of the degree"></input>
+                <input type="text" placeholder="Name of the institution"></input>
+                <input type="text" placeholder="Passing year"></input>
+                <input type="text" placeholder="Result(GPA or CGPA)"></input>
+                <a href="#edu-grp-2" onClick={() => { document.querySelector("#edu-grp-2").style.display = "block"; }} className="btn btn-primary ">Add more</a>
+
+            </div>
+            <br></br>
+            <div id="edu-grp-2">
+                <h5>Degree no:2</h5>
+                <input type="text" placeholder="Name of the degree"></input>
+                <input type="text" placeholder="Name of the institution"></input>
+                <input type="text" placeholder="Passing year"></input>
+                <input type="text" placeholder="Result(GPA or CGPA)"></input>
+                <a href="#edu-grp-3" onClick={() => { document.querySelector("#edu-grp-3").style.display = "block"; }} className="btn btn-primary ">Add more</a>
+                <a href="#edu-grp-1" onClick={() => { document.querySelector("#edu-grp-2").style.display = "none"; }} className="btn btn-danger " style={{ marginLeft: "10px" }}>Delete</a>
+            </div>
+            <br></br>
+            <div id="edu-grp-3">
+                <h5>Degree no:3</h5>
+                <input type="text" placeholder="Name of the degree"></input>
+                <input type="text" placeholder="Name of the institution"></input>
+                <input type="text" placeholder="Passing year"></input>
+                <input type="text" placeholder="Result(GPA or CGPA)"></input>
+                <a href="#edu-grp-4" onClick={() => { document.querySelector("#edu-grp-4").style.display = "block"; }} className="btn btn-primary ">Add more</a>
+                <a href="#edu-grp-2" onClick={() => { document.querySelector("#edu-grp-3").style.display = "none"; }} className="btn btn-danger " style={{ marginLeft: "10px" }}>Delete</a>
+            </div>
+            <br></br>
+            <div id="edu-grp-4">
+                <h5>Degree no:4</h5>
+                <input type="text" placeholder="Name of the degree"></input>
+                <input type="text" placeholder="Name of the institution"></input>
+                <input type="text" placeholder="Passing year"></input>
+                <input type="text" placeholder="Result(GPA or CGPA)"></input>
+                <a href="#edu-grp-5" onClick={() => { document.querySelector("#edu-grp-5").style.display = "block"; }} className="btn btn-primary ">Add more</a>
+                <a href="#edu-grp-3" onClick={() => { document.querySelector("#edu-grp-4").style.display = "none"; }} className="btn btn-danger " style={{ marginLeft: "10px" }}>Delete</a>
+            </div>
+            <br></br>
+            <div id="edu-grp-5">
+                <h5>Degree no:5</h5>
+                <input type="text" placeholder="Name of the degree"></input>
+                <input type="text" placeholder="Name of the institution"></input>
+                <input type="text" placeholder="Passing year"></input>
+                <input type="text" placeholder="Result(GPA or CGPA)"></input>
+                <a href="#edu-grp-4" onClick={() => { document.querySelector("#edu-grp-5").style.display = "none"; }} className="btn btn-danger " >Delete</a>
+            </div>
+        </div>
+    )
+}
+function Address(params) {
+    return (
+        <div>
+            <h2>Address</h2>
+            <hr></hr>
+            <br></br>
+            <input type="address" required placeholder="Permanent address"></input>
+            <input type="address" required placeholder="Present address"></input>
+        </div>
+    )
+}
+const Contact = () => {
+    
+    return (
+        <div>
+            <h2><FcContacts style={{width:"10%",height:"40px",marginRight:"1%",color:"green"}} />Contacts</h2>
+            <hr></hr>
+            <br></br>
+            <MdCall style={{width:"10%",height:"40px",marginRight:"1%",color:"green"}} /><span><input type="tel" required placeholder="Enter your mobile number" ></input></span>
+            
+            
+            <br></br>
+            <MdAlternateEmail style={{width:"10%",height:"40px",marginRight:"1%",color:"red"}} /><span><input type="email" required placeholder="Enter your email address" ></input></span>
+            
+            
+            <br></br>
+            <BsFacebook style={{width:"10%",height:"40px",marginRight:"1%",color:"blue"}} /><span><input type="url" placeholder="Enter your facebbok address" ></input></span>
+            <br></br>
+            <BsGithub style={{width:"10%",height:"40px",marginRight:"1%",color:"black"}} /><span><input type="url" placeholder="Enter your github account" ></input></span>
+            
+            <br></br>
+            <BsLinkedin style={{width:"10%",height:"40px",marginRight:"1%",color:"blue"}} /><span><input type="url" placeholder="Enter your linkedin account" ></input></span>
+            
+            <br></br>
+            <BsInstagram style={{width:"10%",height:"40px",marginRight:"1%",color:"#d62976 "}} /><span><input type="url" placeholder="Enter your instagram account" ></input></span>
+            
+          
+            
+            
+          
+        </div>
+    )
 }
 class Input extends React.Component {
     render() {
-       
+
         return (
             <>
 
                 <div id="tool">
 
-                    <h1>
-                        Enter your details here.
-                    </h1>
+                    <div className=".contain">
+                        <h1>
+                            Enter your details here.
+                        </h1>
 
-                    <div id="tool-left">
-                        
-                        <Personalform />
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <Experienceform />
 
-                       
+                        <form>
+                            <div style={{ display: "flex" }}>
+                                <div id="tool-left">
+
+
+                                    <Personalform />
+                                    <br></br>
+                                    <Experienceform />
+                                    <br></br>
+                                    <Education />
+                                    <br></br>
+                                    <Address />
+
+
+
+                                </div>
+                                <div id="tool-right">
+                                    <Contact />
+                                </div>
+                            </div>
+
+                        </form>
+
                     </div>
 
                 </div>
