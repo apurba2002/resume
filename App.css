@@ -280,6 +280,9 @@ body{
 #edu-grp-5{
     display: none;
 }
+#tool-contain{
+    display: flex;
+}
 
 @media  screen and (max-width:768px){
     body{
@@ -423,6 +426,16 @@ body{
     #gallery .boxtxt{
         font-size: 12px;
         margin-top: 0px;
+    }
+    #tool-left{
+        width: 100%;
+    }
+    #tool-right{
+        width: 100%;
+        margin-left: 0%;
+    }
+    #tool-contain{
+        display: block;
     }
 }
 .animation_foot{
