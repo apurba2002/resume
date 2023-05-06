@@ -230,7 +230,56 @@ body{
     color: white;
     transition: 1s;
 }
+#tool{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 80px;
+    
+}
 
+#tool-left{
+    width: 45%;
+}
+#tool-right{
+    width: 45%;
+    margin-left: 10%;
+}
+#tool h1{
+    margin-bottom: 50px;
+    text-align: center;
+}
+#tool input{
+    width: 89%;
+    height: 60px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.fresher-link{
+    font-size: 12px;
+    margin-left: 10px;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#ex-grp-2{
+    display: none;
+}
+#ex-grp-3{
+    display: none;
+}
+#edu-grp-2{
+    display: none;
+}
+#edu-grp-3{
+    display: none;
+}
+#edu-grp-4{
+    display: none;
+}
+#edu-grp-5{
+    display: none;
+}
 
 @media  screen and (max-width:768px){
     body{
