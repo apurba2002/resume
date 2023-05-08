@@ -9,9 +9,20 @@ import { BsGithub } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 
 import { BsInstagram } from "react-icons/bs";
+import { BsFillBuildingsFill } from "react-icons/bs";
+import { BsClockHistory } from "react-icons/bs";
 import { FaLanguage } from "react-icons/fa";
+import { FaCertificate } from "react-icons/fa";
+import { FaSchool } from "react-icons/fa";
 import { SiSkillshare } from "react-icons/si";
 import { GiSkills } from "react-icons/gi";
+import { GiFamilyHouse } from "react-icons/gi";
+import { MdLocationOn } from "react-icons/md";
+import { MdCastForEducation } from "react-icons/md";
+import { MdSchool } from "react-icons/md";
+import { GrCertificate } from "react-icons/gr";
+
+
 
 
 
@@ -51,7 +62,6 @@ const showreview = (n) => {
         n === "2" ? document.querySelector("#review2").style.display = "block" :
             n === "3" ? document.querySelector("#review3").style.display = "block" : alert("k")
     window.location.href = "#"
-
 
 
 
@@ -246,22 +256,7 @@ class Promotion extends React.Component {
     }
 }
 
-class PromoImg extends React.Component {
-    componentDidMount() {
 
-    }
-    render() {
-        return (
-            <section id="promoimg">
-                <div className="row">
-                    <div className="col-12 col-lg-12 p-0">
-                        <img alt="image" id="pimg" src="pngtree-e-learning-class-flat-illustration-png-png-image_3727055-removebg-preview.png"></img>
-                    </div>
-                </div>
-            </section>
-        )
-    }
-}
 class MidNav extends React.Component {
     render() {
 
@@ -506,12 +501,12 @@ class Personalform extends React.Component {
 
 
         return (
-            <div>
+            <div id="personal-info">
                 <h2>Personal information</h2>
                 <hr></hr>
                 <br>
                 </br>
-                <input type="text" required placeholder=" Your name here"></input>
+                <input type="text" id="name" required placeholder=" Your name here"></input>
                 <input type="text" placeholder=" Your professional subtittle here"></input>
             </div>
 
@@ -572,70 +567,121 @@ class Experienceform extends React.Component {
 function Education() {
     return (
         <div>
-            <h3>Education<span className="fresher-link" onClick={() => {
+            <h3><MdCastForEducation style={{ width: "10%", height: "40px", marginRight: "1%", }} /> Education<span className="fresher-link" onClick={() => {
                 document.querySelector("#edu-grp-1-degree-name").value = "Under SSC or equavalent "
             }}>(if you are under SSC or equavalent click here)</span></h3>
             <hr></hr>
             <br></br>
-            <div id="edu-grp-1">
-                <h5>Degree no:1</h5>
-                <input type="text" id="edu-grp-1-degree-name" required placeholder="Name of the degree"></input>
-                <input type="text" placeholder="Name of the institution"></input>
-                <input type="text" placeholder="Passing year"></input>
-                <input type="text" placeholder="Result(GPA or CGPA)"></input>
-                <a href="#edu-grp-2" onClick={() => { document.querySelector("#edu-grp-2").style.display = "block"; }} className="btn btn-primary ">Add more</a>
+            <h5> <FaCertificate style={{ width: "10%", height: "40px", marginRight: "1%", }} />Degree no:1</h5>
+            <br></br>
+            <GrCertificate style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" id="edu-grp-1-degree-name" required placeholder="Name of the degree"></input>
+            </span>
+            <br></br>
+            <FaSchool style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Name of the institution"></input>
+            </span>
+            <br></br>
+            <BsClockHistory style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Passing year"></input>
+            </span>
+            <br></br>
+            <MdSchool style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Result(GPA or CGPA)"></input>
+            </span>
+            <br></br>
+            <hr></hr>
+            <br></br>
 
-            </div>
+
+
+            <h5> <FaCertificate style={{ width: "10%", height: "40px", marginRight: "1%", }} />Degree no:2</h5>
             <br></br>
-            <div id="edu-grp-2">
-                <h5>Degree no:2</h5>
-                <input type="text" placeholder="Name of the degree"></input>
-                <input type="text" placeholder="Name of the institution"></input>
-                <input type="text" placeholder="Passing year"></input>
-                <input type="text" placeholder="Result(GPA or CGPA)"></input>
-                <a href="#edu-grp-3" onClick={() => { document.querySelector("#edu-grp-3").style.display = "block"; }} className="btn btn-primary ">Add more</a>
-                <a href="#edu-grp-1" onClick={() => { document.querySelector("#edu-grp-2").style.display = "none"; }} className="btn btn-danger " style={{ marginLeft: "10px" }}>Delete</a>
-            </div>
+            <GrCertificate style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Name of the degree"></input>
+            </span>
             <br></br>
-            <div id="edu-grp-3">
-                <h5>Degree no:3</h5>
-                <input type="text" placeholder="Name of the degree"></input>
-                <input type="text" placeholder="Name of the institution"></input>
-                <input type="text" placeholder="Passing year"></input>
-                <input type="text" placeholder="Result(GPA or CGPA)"></input>
-                <a href="#edu-grp-4" onClick={() => { document.querySelector("#edu-grp-4").style.display = "block"; }} className="btn btn-primary ">Add more</a>
-                <a href="#edu-grp-2" onClick={() => { document.querySelector("#edu-grp-3").style.display = "none"; }} className="btn btn-danger " style={{ marginLeft: "10px" }}>Delete</a>
-            </div>
+            <FaSchool style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Name of the institution"></input>
+            </span>
             <br></br>
-            <div id="edu-grp-4">
-                <h5>Degree no:4</h5>
-                <input type="text" placeholder="Name of the degree"></input>
-                <input type="text" placeholder="Name of the institution"></input>
-                <input type="text" placeholder="Passing year"></input>
-                <input type="text" placeholder="Result(GPA or CGPA)"></input>
-                <a href="#edu-grp-5" onClick={() => { document.querySelector("#edu-grp-5").style.display = "block"; }} className="btn btn-primary ">Add more</a>
-                <a href="#edu-grp-3" onClick={() => { document.querySelector("#edu-grp-4").style.display = "none"; }} className="btn btn-danger " style={{ marginLeft: "10px" }}>Delete</a>
-            </div>
+            <BsClockHistory style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Passing year"></input>
+            </span>
             <br></br>
-            <div id="edu-grp-5">
-                <h5>Degree no:5</h5>
-                <input type="text" placeholder="Name of the degree"></input>
-                <input type="text" placeholder="Name of the institution"></input>
-                <input type="text" placeholder="Passing year"></input>
-                <input type="text" placeholder="Result(GPA or CGPA)"></input>
-                <a href="#edu-grp-4" onClick={() => { document.querySelector("#edu-grp-5").style.display = "none"; }} className="btn btn-danger " >Delete</a>
-            </div>
+            <MdSchool style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Result(GPA or CGPA)"></input>
+            </span>
+            <br></br>
+
+
+            <hr></hr>
+            <br></br>
+            <h5> <FaCertificate style={{ width: "10%", height: "40px", marginRight: "1%", }} />Degree no:3</h5>
+            <br></br>
+            <GrCertificate style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Name of the degree"></input>
+            </span>
+            <br></br>
+            <FaSchool style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Name of the institution"></input>
+            </span>
+            <br></br>
+            <BsClockHistory style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Passing year"></input>
+            </span>
+            <br></br>
+            <MdSchool style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Result(GPA or CGPA)"></input>
+            </span>
+            <br></br>
+
+
+            <hr></hr>
+            <br></br>
+            <h5> <FaCertificate style={{ width: "10%", height: "40px", marginRight: "1%", }} />Degree no:4</h5>
+            <br></br>
+            <GrCertificate style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Name of the degree"></input>
+            </span>
+            <br></br>
+            <FaSchool style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Name of the institution"></input>
+            </span>
+            <br></br>
+            <BsClockHistory style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Passing year"></input>
+            </span>
+            <br></br>
+            <MdSchool style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Result(GPA or CGPA)"></input>
+            </span>
+            <br></br>
+
+
+            <hr></hr>
+            <br></br>
+            <h5> <FaCertificate style={{ width: "10%", height: "40px", marginRight: "1%", }} />Degree no:5</h5>
+            <br></br>
+            <GrCertificate style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Name of the degree"></input>
+            </span>
+            <br></br>
+            <FaSchool style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Name of the institution"></input>
+            </span>
+            <br></br>
+            <BsClockHistory style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Passing year"></input>
+            </span>
+            <br></br>
+            <MdSchool style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Result(GPA or CGPA)"></input>
+            </span>
+            <br></br>
+
+
+
+
+
+
+            <br></br>
+
         </div>
     )
 }
 function Address(params) {
     return (
         <div>
-            <h2>Address</h2>
+            <h2><MdLocationOn style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} />Address</h2>
             <hr></hr>
             <br></br>
-            <input type="address" required placeholder="Permanent address"></input>
-            <input type="address" required placeholder="Present address"></input>
+            <GiFamilyHouse style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="address" required placeholder="Permanent address"></input></span>
+            <br></br>
+            <BsFillBuildingsFill style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="address" required placeholder="Present address"></input></span>
+
+
+
         </div>
     )
 }
@@ -729,31 +775,22 @@ class Input extends React.Component {
 
 
                         <form>
-                            <div id="tool-contain">
-                                <div id="tool-left">
+                            <Personalform />
+                            <br></br>
+                            <Experienceform />
+                            <br></br>
+                            <Education />
+                            <br></br>
+                            <Address />
+                            <br></br>
+                            <Contact />
+                            <br></br>
+                            <br></br>
+                            <Language />
+                            <br></br>
+                            <br></br>
+                            <Skill />
 
-
-                                    <Personalform />
-                                    <br></br>
-                                    <Experienceform />
-                                    <br></br>
-                                    <Education />
-                                    <br></br>
-                                    <Address />
-
-
-
-                                </div>
-                                <div id="tool-right">
-                                    <Contact />
-                                    <br></br>
-                                    <br></br>
-                                    <Language />
-                                    <br></br>
-                                    <br></br>
-                                    <Skill />
-                                </div>
-                            </div>
 
                         </form>
 
