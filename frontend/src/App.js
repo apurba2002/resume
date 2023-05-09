@@ -9,6 +9,9 @@ import { BsGithub } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 
 import { BsInstagram } from "react-icons/bs";
+import { BsPersonVcard } from "react-icons/bs";
+import { BsPersonCircle } from "react-icons/bs";
+import { BsPersonLinesFill } from "react-icons/bs";
 import { BsFillBuildingsFill } from "react-icons/bs";
 import { BsClockHistory } from "react-icons/bs";
 import { FaLanguage } from "react-icons/fa";
@@ -502,12 +505,18 @@ class Personalform extends React.Component {
 
         return (
             <div id="personal-info">
-                <h2>Personal information</h2>
+                <h2><BsPersonLinesFill style={{ width: "10%", height: "40px", marginRight: "1%", color: "blue" }} /> Personal information</h2>
                 <hr></hr>
                 <br>
                 </br>
-                <input type="text" id="name" required placeholder=" Your name here"></input>
-                <input type="text" placeholder=" Your professional subtittle here"></input>
+                <BsPersonCircle style={{ width: "10%", height: "40px", marginRight: "1%", color:"blue" }} /><span><input type="text" id="name" required placeholder=" Your name here"></input>
+                </span>
+                <br></br>
+                <BsPersonVcard style={{ width: "10%", height: "40px", marginRight: "1%", color:"blue" }} /><span><input type="text" placeholder=" Your professional subtittle here"></input>
+                </span>
+                <br></br>
+                
+               
             </div>
 
         )
