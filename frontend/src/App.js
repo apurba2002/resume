@@ -8,13 +8,16 @@ import { MdLanguage } from "react-icons/md";
 import { FcContacts } from "react-icons/fc";
 import { BsGithub } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
+import { BsPersonWorkspace } from "react-icons/bs";
 
 import { BsInstagram } from "react-icons/bs";
 import { BsPersonVcard } from "react-icons/bs";
 import { BsPersonCircle } from "react-icons/bs";
 import { BsPersonLinesFill } from "react-icons/bs";
 import { BsFillBuildingsFill } from "react-icons/bs";
+import { BsExplicitFill } from "react-icons/bs";
 import { BsClockHistory } from "react-icons/bs";
+import { BsFillBriefcaseFill } from "react-icons/bs";
 import { FaLanguage } from "react-icons/fa";
 import { FaCertificate } from "react-icons/fa";
 import { FaSchool } from "react-icons/fa";
@@ -25,6 +28,8 @@ import { MdLocationOn } from "react-icons/md";
 import { MdCastForEducation } from "react-icons/md";
 import { MdSchool } from "react-icons/md";
 import { GrCertificate } from "react-icons/gr";
+
+import { GrUserExpert } from "react-icons/gr";
 
 
 
@@ -510,18 +515,73 @@ class Personalform extends React.Component {
                 <hr></hr>
                 <br>
                 </br>
-                <BsPersonCircle style={{ width: "10%", height: "40px", marginRight: "1%", color:"blue" }} /><span><input type="text" id="name" required placeholder=" Your name here"></input>
+                <BsPersonCircle style={{ width: "10%", height: "40px", marginRight: "1%", color: "blue" }} /><span><input type="text" id="name" required placeholder=" Your name here"></input>
                 </span>
                 <br></br>
-                <BsPersonVcard style={{ width: "10%", height: "40px", marginRight: "1%", color:"blue" }} /><span><input type="text" placeholder=" Your professional subtittle here"></input>
+                <BsPersonVcard style={{ width: "10%", height: "40px", marginRight: "1%", color: "blue" }} /><span><input type="text" placeholder=" Your professional subtittle here"></input>
                 </span>
                 <br></br>
-                
-               
+
+
             </div>
 
         )
     }
+}
+function Experienceformheadinf(num) {
+    return (
+        <div>
+            <h5><BsExplicitFill style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} />Experience {num}</h5>
+
+        </div>
+    )
+}
+function experience1(params) {
+    return (
+        <div>
+            {Experienceformheadinf(1)}
+            <br></br>
+            <BsFillBuildingsFill style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /><span><input type="text" placeholder=" Company name here"></input></span>
+            <MdLocationOn style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /><span><input type="text" placeholder=" Company location"></input></span>
+            <BsFillBriefcaseFill style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /><span><input type="text" placeholder=" Job tittle"></input></span>
+            <BsClockHistory style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /><span><input type="text" placeholder=" Start Date (dd-mm-yyyy)"></input></span>
+            <BsClockHistory style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /><span><input type="text" placeholder=" End Date (dd-mm-yyyy)"></input></span>
+
+
+
+
+
+
+        </div>
+    )
+}
+function experience2(params) {
+    return (
+        <div>
+            {Experienceformheadinf(2)}
+            <br></br>
+            <BsFillBuildingsFill style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /><span><input type="text" placeholder=" Company name here"></input></span>
+            <MdLocationOn style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /><span><input type="text" placeholder=" Company location"></input></span>
+            <BsFillBriefcaseFill style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /><span><input type="text" placeholder=" Job tittle"></input></span>
+            <BsClockHistory style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /><span><input type="text" placeholder=" Start Date (dd-mm-yyyy)"></input></span>
+            <BsClockHistory style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /><span><input type="text" placeholder=" End Date (dd-mm-yyyy)"></input></span>
+
+        </div>
+    )
+}
+function experience3(params) {
+    return (
+        <div>
+            {Experienceformheadinf(3)}
+            <br></br>
+            <BsFillBuildingsFill style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /><span><input type="text" placeholder=" Company name here"></input></span>
+            <MdLocationOn style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /><span><input type="text" placeholder=" Company location"></input></span>
+            <BsFillBriefcaseFill style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /><span><input type="text" placeholder=" Job tittle"></input></span>
+            <BsClockHistory style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /><span><input type="text" placeholder=" Start Date (dd-mm-yyyy)"></input></span>
+            <BsClockHistory style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /><span><input type="text" placeholder=" End Date (dd-mm-yyyy)"></input></span>
+
+        </div>
+    )
 }
 class Experienceform extends React.Component {
     render() {
@@ -529,47 +589,18 @@ class Experienceform extends React.Component {
 
         return (
             <div>
-                <h2>Experience<span className="fresher-link" onClick={() => {
-                    document.querySelector("#ex-grp-1-company-name").value = "Fresher"
-                }}>(if you are a fresher click here)</span></h2>
+                <h2> <BsPersonWorkspace style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /> Experience</h2>
                 <hr></hr>
                 <br></br>
-                <div id="ex-grp-1" >
-                    <h5>Experience 1</h5>
-                    <input type="text" required id="ex-grp-1-company-name" placeholder=" Company name here"></input>
-                    <input type="text" placeholder=" Company location"></input>
-                    <input type="text" placeholder=" Job tittle"></input>
-                    <input type="text" placeholder=" Start Date (dd-mm-yyyy)"></input>
-                    <input type="text" placeholder=" End Date (dd-mm-yyyy)"></input>
-                    <a href="#ex-grp-2" onClick={() => { document.querySelector("#ex-grp-2").style.display = "block"; }} className="btn btn-primary ">Add more</a>
-
-
-
-                </div>
-                <br>
-                </br>
-                <div id="ex-grp-2">
-                    <h5>Experience 2</h5>
-                    <input type="text" placeholder=" Company name here"></input>
-                    <input type="text" placeholder=" Company location"></input>
-                    <input type="text" placeholder=" Job tittle"></input>
-                    <input type="text" placeholder=" Start Date (dd-mm-yyyy)"></input>
-                    <input type="text" placeholder=" End Date (dd-mm-yyyy)"></input>
-                    <a href="#ex-grp-3" onClick={() => { document.querySelector("#ex-grp-3").style.display = "block"; }} className="btn btn-primary ">Add more</a>
-                    <a href="#ex-grp-1" onClick={() => { document.querySelector("#ex-grp-2").style.display = "none"; }} className="btn btn-danger " style={{ marginLeft: "10px" }}>Delete</a>
-                </div>
+                {experience1()}
                 <br></br>
-                <div id="ex-grp-3">
-                    <h5>Experience 3</h5>
-                    <input type="text" placeholder=" Company name here"></input>
-                    <input type="text" placeholder=" Company location"></input>
-                    <input type="text" placeholder=" Job tittle"></input>
-                    <input type="text" placeholder=" Start Date (dd-mm-yyyy)"></input>
-                    <input type="text" placeholder=" End Date (dd-mm-yyyy)"></input>
-
-                    <a href="#ex-grp-2" onClick={() => { document.querySelector("#ex-grp-3").style.display = "none"; }} className="btn btn-danger " >Delete</a>
-
-                </div>
+                <hr></hr>
+                <br></br>
+                {experience2()}
+                <br></br>
+                <hr></hr>
+                <br></br>
+                {experience3()}
             </div>
         )
     }
@@ -747,24 +778,18 @@ const Skill = () => {
             <h2><SiSkillshare style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} />Skills</h2>
             <hr></hr>
             <br></br>
-            <div style={{ display: "flex" }}>
-                <div style={{ width: "45%" }}>
-                    <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" required placeholder=" Skill no:1 "></input></span>
-                    <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:2 "></input></span>
-                    <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:3 "></input></span>
-                    <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:4 "></input></span>
-                    <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:5 "></input></span>
+            <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" required placeholder=" Skill no:1 "></input></span>
+            <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:2 "></input></span>
+            <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:3 "></input></span>
+            <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:4 "></input></span>
+            <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:5 "></input></span>
+            <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:6 "></input></span>
+            <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:7 "></input></span>
+            <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:8 "></input></span>
+            <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:9 "></input></span>
+            <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:10 "></input></span>
 
-                </div>
-                <div style={{ marginLeft: "10%", width: "45%" }}>
-                    <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:6 "></input></span>
-                    <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:7 "></input></span>
-                    <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:8 "></input></span>
-                    <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:9 "></input></span>
-                    <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:10 "></input></span>
-
-                </div>
-            </div>
+           
 
 
         </div>
@@ -778,7 +803,7 @@ class Input extends React.Component {
 
                 <div id="tool">
 
-                    <div className=".contain">
+                    <div className="">
                         <h1>
                             Enter your details here.
                         </h1>
