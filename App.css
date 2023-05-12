@@ -246,10 +246,10 @@ body{
 }
 #tool h1{
     margin-bottom: 50px;
-    text-align: center;
+   display: none;
 }
 #tool input{
-    width: 89%;
+    width: 85%;
     height: 60px;
     border: 1px solid lightgray;
     border-radius: 10px;
