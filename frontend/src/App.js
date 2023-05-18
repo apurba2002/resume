@@ -11,6 +11,8 @@ import { BsLinkedin } from "react-icons/bs";
 import { BsPersonWorkspace } from "react-icons/bs";
 
 import { BsInstagram } from "react-icons/bs";
+import { BsParagraph } from "react-icons/bs";
+import { BsProjectorFill } from "react-icons/bs";
 import { BsPersonVcard } from "react-icons/bs";
 import { BsPersonCircle } from "react-icons/bs";
 import { BsPersonLinesFill } from "react-icons/bs";
@@ -28,6 +30,10 @@ import { MdLocationOn } from "react-icons/md";
 import { MdCastForEducation } from "react-icons/md";
 import { MdSchool } from "react-icons/md";
 import { GrCertificate } from "react-icons/gr";
+import { GrTechnology } from "react-icons/gr";
+import { FcVideoProjector } from "react-icons/fc";
+import { GoProject } from "react-icons/go";
+import { AiOutlineLink } from "react-icons/ai";
 
 import { GrUserExpert } from "react-icons/gr";
 
@@ -789,7 +795,7 @@ const Skill = () => {
             <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:9 "></input></span>
             <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:10 "></input></span>
 
-           
+
 
 
         </div>
@@ -825,6 +831,9 @@ class Input extends React.Component {
                             <br></br>
                             <br></br>
                             <Skill />
+                            <br></br>
+                            <br></br>
+                            <Project />
 
 
                         </form>
@@ -835,6 +844,37 @@ class Input extends React.Component {
             </>
         )
     }
+}
+const Project = () => {
+    return (
+        <div>
+            <h2><FcVideoProjector style={{ width: "10%", height: "40px", marginRight: "1%",  }} />Projects</h2>
+            <hr></hr>
+            <br></br>
+            {Projecthead(1)}
+            <br></br>
+            <GoProject style={{ width: "10%", height: "40px", marginRight: "1%",  }} /><span><input type="text"  placeholder="Project name:"></input></span>
+            
+            <br></br>
+            <AiOutlineLink style={{ width: "10%", height: "40px", marginRight: "1%",  }} /><span><input type="url"  placeholder="Project link:"></input></span>
+            
+            <br></br>
+            <GrTechnology style={{ width: "10%", height: "40px", marginRight: "1%",  }} /><span><input type="text"  placeholder="Technology used in this project(tech1,tech2,tech3,.....):"></input></span>
+            
+            <br></br>
+            <BsParagraph style={{ width: "10%", height: "40px", marginRight: "1%",  }} /><span><input style={{paddingBottom:"100px",paddingTop:"20px"}} type="text"  placeholder="Write about your project:"></input></span>
+            
+            
+        </div>
+    )
+}
+const Projecthead = (num) => {
+    return (
+        <div>
+            <h5><BsProjectorFill style={{ width: "10%", height: "40px", marginRight: "1%",  }} /> Project {num}</h5>
+
+        </div>
+    )
 }
 
 function App() {
