@@ -1,6 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import React from "react";
+
+import ReactDOM from "react-dom/client";
+import {
+    BrowserRouter,
+    createBrowserRouter,
+    RouterProvider,
+} from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import { BsFacebook } from "react-icons/bs";
 import { MdAlternateEmail } from "react-icons/md";
 import { MdCall } from "react-icons/md";
@@ -215,7 +223,7 @@ class Navbar extends React.Component {
                                         <a className="nav-link " aria-current="page" href="#">About</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Privacy policy</a>
+                                        <Link to={'router'} className="nav-link" >Privacy policy</Link>
                                     </li>
                                     <li className="nav-item">
                                         <a className="nav-link" href="#footer">Contact</a>
@@ -833,7 +841,7 @@ class Input extends React.Component {
                             <Skill />
                             <br></br>
                             <br></br>
-                            <Project />
+                            <Projectall />
 
 
                         </form>
@@ -845,53 +853,115 @@ class Input extends React.Component {
         )
     }
 }
-const Project = () => {
-    return (
-        <div>
-            <h2><FcVideoProjector style={{ width: "10%", height: "40px", marginRight: "1%",  }} />Projects</h2>
-            <hr></hr>
-            <br></br>
-            {Projecthead(1)}
-            <br></br>
-            <GoProject style={{ width: "10%", height: "40px", marginRight: "1%",  }} /><span><input type="text"  placeholder="Project name:"></input></span>
-            
-            <br></br>
-            <AiOutlineLink style={{ width: "10%", height: "40px", marginRight: "1%",  }} /><span><input type="url"  placeholder="Project link:"></input></span>
-            
-            <br></br>
-            <GrTechnology style={{ width: "10%", height: "40px", marginRight: "1%",  }} /><span><input type="text"  placeholder="Technology used in this project(tech1,tech2,tech3,.....):"></input></span>
-            
-            <br></br>
-            <BsParagraph style={{ width: "10%", height: "40px", marginRight: "1%",  }} /><span><input style={{paddingBottom:"100px",paddingTop:"20px"}} type="text"  placeholder="Write about your project:"></input></span>
-            
-            
-        </div>
-    )
-}
 const Projecthead = (num) => {
     return (
         <div>
-            <h5><BsProjectorFill style={{ width: "10%", height: "40px", marginRight: "1%",  }} /> Project {num}</h5>
+            <h5><BsProjectorFill style={{ width: "10%", height: "40px", marginRight: "1%", }} /> Project {num}</h5>
 
         </div>
     )
 }
+const Projectinput = () => {
+    return (
+        <div>
+            <GoProject style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Project name:"></input></span>
+
+            <br></br>
+            <AiOutlineLink style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="url" placeholder="Project link:"></input></span>
+
+            <br></br>
+            <GrTechnology style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Technology used in this project(tech1,tech2,tech3,.....):"></input></span>
+
+            <br></br>
+            <BsParagraph style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input style={{ paddingBottom: "100px", paddingTop: "20px" }} type="text" placeholder="Write about your project:"></input></span>
+
+        </div>
+    )
+}
+const Project1 = () => {
+    return (
+        <div>
+            {Projecthead(1)}
+            <br></br>
+            {Projectinput()}
+        </div>
+    )
+}
+const Project2 = () => {
+    return (
+        <div>
+            {Projecthead(2)}
+            <br></br>
+            {Projectinput()}
+        </div>
+    )
+}
+const Project3 = () => {
+    return (
+        <div>
+            {Projecthead(3)}
+            <br></br>
+            {Projectinput()}
+        </div>
+    )
+}
+const Project4 = () => {
+    return (
+        <div>
+            {Projecthead(4)}
+            <br></br>
+            {Projectinput()}
+        </div>
+    )
+}
+const Project5 = () => {
+    return (
+        <div>
+            {Projecthead(5)}
+            <br></br>
+            {Projectinput()}
+        </div>
+    )
+}
+const Projectall = () => {
+    return (
+        <div>
+            <h2><FcVideoProjector style={{ width: "10%", height: "40px", marginRight: "1%", }} />Projects</h2>
+            <hr></hr>
+            <br></br>
+            {Project1()}
+            <br></br>
+            {Project2()}
+            <br></br>
+            {Project3()}
+            <br></br>
+            {Project4()}
+            <br></br>
+            {Project5()}
+            <br></br>
+
+        </div>
+    )
+}
+
 
 function App() {
     return (
         <>
 
-            <Navbar />
+            <BrowserRouter>
+                <Navbar />
 
-            <Promotion />
-            <MidNav />
-            <Baneradd />
-            <Reviewcard />
-            <Review />
-            <Tempcontrol />
-            <Input />
+                <Promotion />
+                <MidNav />
+                <Baneradd />
+                <Reviewcard />
+                <Review />
+                <Tempcontrol />
+                <Input />
 
-            <Footer />
+                <Footer />
+            </BrowserRouter>
 
 
 
