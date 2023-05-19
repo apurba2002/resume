@@ -2,13 +2,16 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import React from "react";
 
-import ReactDOM from "react-dom/client";
+
 import {
-    BrowserRouter,
-    createBrowserRouter,
-    RouterProvider,
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+    
 } from "react-router-dom";
-import { Outlet, Link } from "react-router-dom";
+
+
 import { BsFacebook } from "react-icons/bs";
 import { MdAlternateEmail } from "react-icons/md";
 import { MdCall } from "react-icons/md";
@@ -223,7 +226,7 @@ class Navbar extends React.Component {
                                         <a className="nav-link " aria-current="page" href="#">About</a>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to={'router'} className="nav-link" >Privacy policy</Link>
+                                        <a className="nav-link" >Privacy policy</a>
                                     </li>
                                     <li className="nav-item">
                                         <a className="nav-link" href="#footer">Contact</a>
@@ -870,9 +873,7 @@ const Projectinput = () => {
             <AiOutlineLink style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="url" placeholder="Project link:"></input></span>
 
             <br></br>
-            <GrTechnology style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Technology used in this project(tech1,tech2,tech3,.....):"></input></span>
-
-            <br></br>
+           
             <BsParagraph style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input style={{ paddingBottom: "100px", paddingTop: "20px" }} type="text" placeholder="Write about your project:"></input></span>
 
         </div>
@@ -945,11 +946,12 @@ const Projectall = () => {
 }
 
 
+
 function App() {
     return (
         <>
 
-            <BrowserRouter>
+           
                 <Navbar />
 
                 <Promotion />
@@ -961,7 +963,7 @@ function App() {
                 <Input />
 
                 <Footer />
-            </BrowserRouter>
+           
 
 
 
