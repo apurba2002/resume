@@ -283,6 +283,19 @@ body{
 #tool-contain{
     display: flex;
 }
+#personal-info{
+    display: none;
+}
+.control-btn{
+    float: right;
+    margin-right: 5%;
+    width: 20%;
+}
+.control-btn-back{
+    float: right;
+    margin-right: 5px;
+    width: 20%;
+}
 
 @media  screen and (max-width:768px){
     body{

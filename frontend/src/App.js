@@ -61,6 +61,8 @@ const showtemplete = () => {
     document.querySelector("#review1").style.display = "none";
     document.querySelector("#review2").style.display = "none";
     document.querySelector("#review3").style.display = "none";
+    document.querySelector("#personal-info").style.display="none";
+    document.querySelector("#tem-for-u").style.display="block";
     window.location.href = "#"
 
 
@@ -92,7 +94,14 @@ const showreview = (n) => {
 
 
 }
-
+const showpersonalinfo=(n)=>{
+    const theme=n;
+    document.querySelector("#temp-control").style.display="none";
+    document.querySelector("#tem-for-u").style.display="none";
+    document.querySelector("#personal-info").style.display="block";
+    sessionStorage.setItem("theme",theme);
+    
+}
 
 class Tempcontrol extends React.Component {
 
@@ -164,7 +173,7 @@ class Tem extends React.Component {
             <>
                 <section id="tem-for-u">
                     <div className="contain">
-                        <div className="box">
+                        <div className="box" onClick={()=>{showpersonalinfo("simpledefault")}}>
                             <img alt="image" src="contactimg.jpg" className="boximg"></img>
                             <br></br>
                             <br>
@@ -173,7 +182,7 @@ class Tem extends React.Component {
 
 
                         </div>
-                        <div className="box">
+                        <div className="box"  onClick={()=>{showpersonalinfo("simplegreen")}}>
                             <img alt="image" src="privacyimg.jpg" className="boximg"></img>
                             <br></br>
                             <br>
@@ -182,7 +191,7 @@ class Tem extends React.Component {
 
 
                         </div>
-                        <div className="box" style={{ marginRight: "0" }}>
+                        <div className="box" style={{ marginRight: "0" }}  onClick={()=>{showpersonalinfo("simpleorange")}}>
                             <img alt="image" src="temimg.jpg" className="boximg"></img>
                             <br></br>
                             <br>
@@ -538,6 +547,8 @@ class Personalform extends React.Component {
                 <BsPersonVcard style={{ width: "10%", height: "40px", marginRight: "1%", color: "blue" }} /><span><input type="text" placeholder=" Your professional subtittle here"></input>
                 </span>
                 <br></br>
+                <button className='btn btn-primary control-btn' onClick={showpersonalinfo}  >Next</button>
+                <a className='btn btn-danger control-btn-back' onClick={showtemplete} >Back</a>
 
 
             </div>
