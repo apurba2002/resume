@@ -8,7 +8,7 @@ import {
     Switch,
     Route,
     Link
-    
+
 } from "react-router-dom";
 
 
@@ -61,8 +61,9 @@ const showtemplete = () => {
     document.querySelector("#review1").style.display = "none";
     document.querySelector("#review2").style.display = "none";
     document.querySelector("#review3").style.display = "none";
-    document.querySelector("#personal-info").style.display="none";
-    document.querySelector("#tem-for-u").style.display="block";
+    document.querySelector("#personal-info").style.display = "none";
+    document.querySelector("#experience").style.display = "none";
+    document.querySelector("#tem-for-u").style.display = "block";
     window.location.href = "#"
 
 
@@ -94,13 +95,34 @@ const showreview = (n) => {
 
 
 }
-const showpersonalinfo=(n)=>{
-    const theme=n;
-    document.querySelector("#temp-control").style.display="none";
-    document.querySelector("#tem-for-u").style.display="none";
-    document.querySelector("#personal-info").style.display="block";
-    sessionStorage.setItem("theme",theme);
+const showpersonalinfo = (n) => {
+    const theme = n;
+    document.querySelector("#temp-control").style.display = "none";
+    document.querySelector("#tem-for-u").style.display = "none";
+    document.querySelector("#personal-info").style.display = "block";
+    document.querySelector("#experience").style.display = "none";
+    sessionStorage.setItem("theme", theme);
+    window.location.href = "#"
+
     
+
+}
+const showesperience = () => {
+    document.querySelector("#personal-info").style.display = "none";
+    document.querySelector("#experience").style.display = "block";
+    window.location.href = "#"
+
+}
+const authentacate = (id, fun) => {
+    let field = document.querySelector(id).value;
+    if (field === "") {
+        alert('Please fill out the required fields')
+    }
+    else {
+        fun()
+    }
+
+
 }
 
 class Tempcontrol extends React.Component {
@@ -173,7 +195,7 @@ class Tem extends React.Component {
             <>
                 <section id="tem-for-u">
                     <div className="contain">
-                        <div className="box" onClick={()=>{showpersonalinfo("simpledefault")}}>
+                        <div className="box" onClick={() => { showpersonalinfo("simpledefault") }}>
                             <img alt="image" src="contactimg.jpg" className="boximg"></img>
                             <br></br>
                             <br>
@@ -182,7 +204,7 @@ class Tem extends React.Component {
 
 
                         </div>
-                        <div className="box"  onClick={()=>{showpersonalinfo("simplegreen")}}>
+                        <div className="box" onClick={() => { showpersonalinfo("simplegreen") }}>
                             <img alt="image" src="privacyimg.jpg" className="boximg"></img>
                             <br></br>
                             <br>
@@ -191,7 +213,7 @@ class Tem extends React.Component {
 
 
                         </div>
-                        <div className="box" style={{ marginRight: "0" }}  onClick={()=>{showpersonalinfo("simpleorange")}}>
+                        <div className="box" style={{ marginRight: "0" }} onClick={() => { showpersonalinfo("simpleorange") }}>
                             <img alt="image" src="temimg.jpg" className="boximg"></img>
                             <br></br>
                             <br>
@@ -536,22 +558,24 @@ class Personalform extends React.Component {
 
 
         return (
-            <div id="personal-info">
-                <h2><BsPersonLinesFill style={{ width: "10%", height: "40px", marginRight: "1%", color: "blue" }} /> Personal information</h2>
-                <hr></hr>
-                <br>
-                </br>
-                <BsPersonCircle style={{ width: "10%", height: "40px", marginRight: "1%", color: "blue" }} /><span><input type="text" id="name" required placeholder=" Your name here"></input>
-                </span>
-                <br></br>
-                <BsPersonVcard style={{ width: "10%", height: "40px", marginRight: "1%", color: "blue" }} /><span><input type="text" placeholder=" Your professional subtittle here"></input>
-                </span>
-                <br></br>
-                <button className='btn btn-primary control-btn' onClick={showpersonalinfo}  >Next</button>
-                <a className='btn btn-danger control-btn-back' onClick={showtemplete} >Back</a>
+            <form >
+                <div id="personal-info">
+                    <h2><BsPersonLinesFill style={{ width: "10%", height: "40px", marginRight: "1%", color: "blue" }} /> Personal information</h2>
+                    <hr></hr>
+                    <br>
+                    </br>
+                    <BsPersonCircle style={{ width: "10%", height: "40px", marginRight: "1%", color: "blue" }} /><span><input type="text" id="name" required placeholder=" Your name here"></input>
+                    </span>
+                    <br></br>
+                    <BsPersonVcard style={{ width: "10%", height: "40px", marginRight: "1%", color: "blue" }} /><span><input type="text" placeholder=" Your professional subtittle here"></input>
+                    </span>
+                    <br></br>
+                    <button className='btn btn-primary control-btn' onClick={() => { authentacate("#name", showesperience) }}>Next</button>
+                    <a className='btn btn-danger control-btn-back' onClick={showtemplete} >Back</a>
 
 
-            </div>
+                </div>
+            </form>
 
         )
     }
@@ -560,6 +584,7 @@ function Experienceformheadinf(num) {
     return (
         <div>
             <h5><BsExplicitFill style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} />Experience {num}</h5>
+
 
         </div>
     )
@@ -616,8 +641,11 @@ class Experienceform extends React.Component {
 
 
         return (
-            <div>
-                <h2> <BsPersonWorkspace style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /> Experience</h2>
+            <section id='experience'>
+                <section style={{display:"flex"}}>
+                    <h2> <BsPersonWorkspace style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /> Experience</h2>
+                    <button className='btn btn-primary'style={{width:"30%" ,height:"35px",marginTop:"5px"}} onClick={showpersonalinfo}>Skip</button>
+                </section>
                 <hr></hr>
                 <br></br>
                 {experience1()}
@@ -629,7 +657,11 @@ class Experienceform extends React.Component {
                 <hr></hr>
                 <br></br>
                 {experience3()}
-            </div>
+                <br></br>
+                <button className='btn btn-primary control-btn'>Next</button>
+                <a className='btn btn-danger control-btn-back' onClick={showpersonalinfo}  >Back</a>
+
+            </section>
         )
     }
 }
@@ -837,28 +869,28 @@ class Input extends React.Component {
                         </h1>
 
 
-                        <form>
-                            <Personalform />
-                            <br></br>
-                            <Experienceform />
-                            <br></br>
-                            <Education />
-                            <br></br>
-                            <Address />
-                            <br></br>
-                            <Contact />
-                            <br></br>
-                            <br></br>
-                            <Language />
-                            <br></br>
-                            <br></br>
-                            <Skill />
-                            <br></br>
-                            <br></br>
-                            <Projectall />
+
+                        <Personalform />
+                        <br></br>
+                        <Experienceform />
+                        <br></br>
+                        <Education />
+                        <br></br>
+                        <Address />
+                        <br></br>
+                        <Contact />
+                        <br></br>
+                        <br></br>
+                        <Language />
+                        <br></br>
+                        <br></br>
+                        <Skill />
+                        <br></br>
+                        <br></br>
+                        <Projectall />
 
 
-                        </form>
+
 
                     </div>
 
@@ -884,7 +916,7 @@ const Projectinput = () => {
             <AiOutlineLink style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="url" placeholder="Project link:"></input></span>
 
             <br></br>
-           
+
             <BsParagraph style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input style={{ paddingBottom: "100px", paddingTop: "20px" }} type="text" placeholder="Write about your project:"></input></span>
 
         </div>
@@ -962,19 +994,19 @@ function App() {
     return (
         <>
 
-           
-                <Navbar />
 
-                <Promotion />
-                <MidNav />
-                <Baneradd />
-                <Reviewcard />
-                <Review />
-                <Tempcontrol />
-                <Input />
+            <Navbar />
 
-                <Footer />
-           
+            <Promotion />
+            <MidNav />
+            <Baneradd />
+            <Reviewcard />
+            <Review />
+            <Tempcontrol />
+            <Input />
+
+            <Footer />
+
 
 
 
