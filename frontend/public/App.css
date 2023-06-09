@@ -299,6 +299,12 @@ body{
 #experience{
     display: none;
 }
+#education{
+    display: none;
+}
+#address{
+    display: none;
+}
 
 @media  screen and (max-width:768px){
     body{

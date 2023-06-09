@@ -104,14 +104,25 @@ const showpersonalinfo = (n) => {
     sessionStorage.setItem("theme", theme);
     window.location.href = "#"
 
-    
+
 
 }
 const showesperience = () => {
     document.querySelector("#personal-info").style.display = "none";
     document.querySelector("#experience").style.display = "block";
+    document.querySelector("#education").style.display = "none";
     window.location.href = "#"
 
+}
+const showeducation = () => {
+    document.querySelector("#experience").style.display = "none";
+    document.querySelector("#education").style.display = "block";
+    window.location.href = "#"
+}
+const showaddress = () => {
+    document.querySelector("#education").style.display = "none";
+    document.querySelector("#address").style.display = "block";
+    window.location.href = "#"
 }
 const authentacate = (id, fun) => {
     let field = document.querySelector(id).value;
@@ -642,40 +653,40 @@ class Experienceform extends React.Component {
 
         return (
             <section id='experience'>
-                <section style={{display:"flex"}}>
+                <section style={{ display: "flex" }}>
                     <h2> <BsPersonWorkspace style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /> Experience</h2>
-                    <button className='btn btn-primary'style={{width:"30%" ,height:"35px",marginTop:"5px"}} onClick={showpersonalinfo}>Skip</button>
+                    <button className='btn btn-primary' style={{ width: "30%", height: "35px", marginTop: "5px" }} onClick={showeducation}>Skip</button>
                 </section>
-                <hr></hr>
-                <br></br>
-                {experience1()}
-                <br></br>
-                <hr></hr>
-                <br></br>
-                {experience2()}
-                <br></br>
-                <hr></hr>
-                <br></br>
-                {experience3()}
-                <br></br>
-                <button className='btn btn-primary control-btn'>Next</button>
-                <a className='btn btn-danger control-btn-back' onClick={showpersonalinfo}  >Back</a>
+                <form>
+                    <hr></hr>
+                    <br></br>
+                    {experience1()}
+                    <br></br>
+                    <hr></hr>
+                    <br></br>
+                    {experience2()}
+                    <br></br>
+                    <hr></hr>
+                    <br></br>
+                    {experience3()}
+                    <br></br>
+                    <button className='btn btn-primary control-btn' onClick={() => { showeducation() }}>Next</button>
+                    <a className='btn btn-danger control-btn-back' onClick={showpersonalinfo}  >Back</a>
 
+                </form>
             </section>
         )
     }
 }
 function Education() {
     return (
-        <div>
-            <h3><MdCastForEducation style={{ width: "10%", height: "40px", marginRight: "1%", }} /> Education<span className="fresher-link" onClick={() => {
-                document.querySelector("#edu-grp-1-degree-name").value = "Under SSC or equavalent "
-            }}>(if you are under SSC or equavalent click here)</span></h3>
+        <div id='education'>
+            <h3><MdCastForEducation style={{ width: "10%", height: "40px", marginRight: "1%", }} /> Education<span ><button className='btn btn-primary' style={{ width: "30%", height: "35px", marginTop: "5px",marginLeft:"10px" }} onClick={showaddress}>Skip</button></span></h3>
             <hr></hr>
             <br></br>
             <h5> <FaCertificate style={{ width: "10%", height: "40px", marginRight: "1%", }} />Degree no:1</h5>
             <br></br>
-            <GrCertificate style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" id="edu-grp-1-degree-name" required placeholder="Name of the degree"></input>
+            <GrCertificate style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" id="edu-grp-1-degree-name" placeholder="Name of the degree"></input>
             </span>
             <br></br>
             <FaSchool style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Name of the institution"></input>
@@ -760,6 +771,9 @@ function Education() {
             <MdSchool style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input type="text" placeholder="Result(GPA or CGPA)"></input>
             </span>
             <br></br>
+            <button className='btn btn-primary control-btn' onClick={() => { showaddress() }}>Next</button>
+            <a className='btn btn-danger control-btn-back' onClick={showesperience}  >Back</a>
+
 
 
 
@@ -773,13 +787,13 @@ function Education() {
 }
 function Address(params) {
     return (
-        <div>
+        <div id='address'>
             <h2><MdLocationOn style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} />Address</h2>
             <hr></hr>
             <br></br>
-            <GiFamilyHouse style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="address" required placeholder="Permanent address"></input></span>
+            <GiFamilyHouse style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="address" id='permanentaddress' required placeholder="Permanent address"></input></span>
             <br></br>
-            <BsFillBuildingsFill style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="address" required placeholder="Present address"></input></span>
+            <BsFillBuildingsFill style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="address"  placeholder="Present address"></input></span>
 
 
 
