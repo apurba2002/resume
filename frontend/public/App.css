@@ -305,6 +305,15 @@ body{
 #address{
     display: none;
 }
+#contacts{
+    display: none;
+}
+#language{
+    display: none;
+}
+#skills{
+    display: none;
+}
 
 @media  screen and (max-width:768px){
     body{

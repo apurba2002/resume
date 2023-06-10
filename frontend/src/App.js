@@ -117,16 +117,49 @@ const showesperience = () => {
 const showeducation = () => {
     document.querySelector("#experience").style.display = "none";
     document.querySelector("#education").style.display = "block";
+    document.querySelector("#address").style.display = "none";
     window.location.href = "#"
 }
 const showaddress = () => {
     document.querySelector("#education").style.display = "none";
     document.querySelector("#address").style.display = "block";
+    document.querySelector("#contacts").style.display = "none";
+    window.location.href = "#"
+}
+const showcontacts = () => {
+    document.querySelector("#address").style.display = "none";
+    document.querySelector("#contacts").style.display = "block";
+    document.querySelector("#language").style.display = "none";
+    window.location.href = "#"
+}
+const showlanguage = () => {
+    document.querySelector("#contacts").style.display = "none";
+    document.querySelector("#language").style.display = "block";
+    document.querySelector("#skills").style.display = "none";
+    window.location.href = "#"
+}
+const showskills = () => {
+    document.querySelector("#language").style.display = "none";
+    document.querySelector("#skills").style.display = "block";
     window.location.href = "#"
 }
 const authentacate = (id, fun) => {
     let field = document.querySelector(id).value;
+
     if (field === "") {
+        alert('Please fill out the required fields')
+    }
+    else {
+        fun()
+    }
+
+
+}
+const authentacatecontact = (id, id2, fun) => {
+    let field = document.querySelector(id).value;
+    let field2 = document.querySelector(id2).value;
+
+    if (field === "" || field2 === "") {
         alert('Please fill out the required fields')
     }
     else {
@@ -681,7 +714,7 @@ class Experienceform extends React.Component {
 function Education() {
     return (
         <div id='education'>
-            <h3><MdCastForEducation style={{ width: "10%", height: "40px", marginRight: "1%", }} /> Education<span ><button className='btn btn-primary' style={{ width: "30%", height: "35px", marginTop: "5px",marginLeft:"10px" }} onClick={showaddress}>Skip</button></span></h3>
+            <h3><MdCastForEducation style={{ width: "10%", height: "40px", marginRight: "1%", }} /> Education<span ><button className='btn btn-primary' style={{ width: "30%", height: "35px", marginTop: "5px", marginLeft: "10px" }} onClick={showaddress}>Skip</button></span></h3>
             <hr></hr>
             <br></br>
             <h5> <FaCertificate style={{ width: "10%", height: "40px", marginRight: "1%", }} />Degree no:1</h5>
@@ -791,9 +824,13 @@ function Address(params) {
             <h2><MdLocationOn style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} />Address</h2>
             <hr></hr>
             <br></br>
-            <GiFamilyHouse style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="address" id='permanentaddress' required placeholder="Permanent address"></input></span>
-            <br></br>
-            <BsFillBuildingsFill style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="address"  placeholder="Present address"></input></span>
+            <form>
+                <GiFamilyHouse style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="address" id='permanentaddress' required placeholder="Permanent address"></input></span>
+                <br></br>
+                <BsFillBuildingsFill style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="address" placeholder="Present address"></input></span>
+                <button className='btn btn-primary control-btn' onClick={() => { authentacate("#permanentaddress", showcontacts) }}>Next</button>
+                <a className='btn btn-danger control-btn-back' onClick={showeducation}  >Back</a>
+            </form>
 
 
 
@@ -803,30 +840,33 @@ function Address(params) {
 const Contact = () => {
 
     return (
-        <div>
-            <h2><FcContacts style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} />Contacts</h2>
-            <hr></hr>
-            <br></br>
-            <MdCall style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="tel" required placeholder="Enter your mobile number" ></input></span>
+        <div id='contacts' >
+            <form>
+                <h2><FcContacts style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} />Contacts</h2>
+                <hr></hr>
+                <br></br>
+                <MdCall style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="tel" id='mobile' required placeholder="Enter your mobile number" ></input></span>
 
 
-            <br></br>
-            <MdAlternateEmail style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /><span><input type="email" required placeholder="Enter your email address" ></input></span>
+                <br></br>
+                <MdAlternateEmail style={{ width: "10%", height: "40px", marginRight: "1%", color: "red" }} /><span><input type="email" id='email' required placeholder="Enter your email address" ></input></span>
 
 
-            <br></br>
-            <BsFacebook style={{ width: "10%", height: "40px", marginRight: "1%", color: "blue" }} /><span><input type="url" placeholder="Enter your facebbok address" ></input></span>
-            <br></br>
-            <BsGithub style={{ width: "10%", height: "40px", marginRight: "1%", color: "black" }} /><span><input type="url" placeholder="Enter your github account" ></input></span>
+                <br></br>
+                <BsFacebook style={{ width: "10%", height: "40px", marginRight: "1%", color: "blue" }} /><span><input type="url" placeholder="Enter your facebbok address" ></input></span>
+                <br></br>
+                <BsGithub style={{ width: "10%", height: "40px", marginRight: "1%", color: "black" }} /><span><input type="url" placeholder="Enter your github account" ></input></span>
 
-            <br></br>
-            <BsLinkedin style={{ width: "10%", height: "40px", marginRight: "1%", color: "blue" }} /><span><input type="url" placeholder="Enter your linkedin account" ></input></span>
+                <br></br>
+                <BsLinkedin style={{ width: "10%", height: "40px", marginRight: "1%", color: "blue" }} /><span><input type="url" placeholder="Enter your linkedin account" ></input></span>
 
-            <br></br>
-            <BsInstagram style={{ width: "10%", height: "40px", marginRight: "1%", color: "#d62976 " }} /><span><input type="url" placeholder="Enter your instagram account" ></input></span>
+                <br></br>
+                <BsInstagram style={{ width: "10%", height: "40px", marginRight: "1%", color: "#d62976 " }} /><span><input type="url" placeholder="Enter your instagram account" ></input></span>
+                <button className='btn btn-primary control-btn' onClick={() => { authentacatecontact("#email", "#mobile", showlanguage) }}>Next</button>
+                <a className='btn btn-danger control-btn-back' onClick={showaddress}  >Back</a>
 
 
-
+            </form>
 
 
         </div>
@@ -834,7 +874,7 @@ const Contact = () => {
 }
 const Language = () => {
     return (
-        <div>
+        <div id='language'>
             <h2><MdLanguage style={{ width: "10%", height: "40px", marginRight: "1%", color: "orange" }} />Language</h2>
             <hr></hr>
             <br></br>
@@ -843,12 +883,15 @@ const Language = () => {
             <FaLanguage style={{ width: "10%", height: "40px", marginRight: "1%", color: "orange" }} /><span><input type="text" placeholder="Additional Language 3"></input></span>
             <FaLanguage style={{ width: "10%", height: "40px", marginRight: "1%", color: "orange" }} /><span><input type="text" placeholder="Additional Language 2"></input></span>
             <FaLanguage style={{ width: "10%", height: "40px", marginRight: "1%", color: "orange" }} /><span><input type="text" placeholder="Additional Language 4"></input></span>
+            <button className='btn btn-primary control-btn' onClick={() => {showskills()} }>Next</button>
+            <a className='btn btn-danger control-btn-back' onClick={showcontacts}  >Back</a>
+
         </div>
     )
 }
 const Skill = () => {
     return (
-        <div>
+        <div id='skills'>
             <h2><SiSkillshare style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} />Skills</h2>
             <hr></hr>
             <br></br>
@@ -862,6 +905,8 @@ const Skill = () => {
             <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:8 "></input></span>
             <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:9 "></input></span>
             <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:10 "></input></span>
+            <button className='btn btn-primary control-btn' onClick={() => {showskills()} }>Next</button>
+            <a className='btn btn-danger control-btn-back' onClick={showlanguage}  >Back</a>
 
 
 
@@ -885,22 +930,19 @@ class Input extends React.Component {
 
 
                         <Personalform />
-                        <br></br>
+
                         <Experienceform />
-                        <br></br>
+
                         <Education />
-                        <br></br>
+
                         <Address />
-                        <br></br>
+
                         <Contact />
-                        <br></br>
-                        <br></br>
+
                         <Language />
-                        <br></br>
-                        <br></br>
+
                         <Skill />
-                        <br></br>
-                        <br></br>
+
                         <Projectall />
 
 
