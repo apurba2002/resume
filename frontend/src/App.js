@@ -63,6 +63,7 @@ const showtemplete = () => {
     document.querySelector("#review3").style.display = "none";
     document.querySelector("#personal-info").style.display = "none";
     document.querySelector("#experience").style.display = "none";
+    document.querySelector("#skills").style.display = "none";
     document.querySelector("#tem-for-u").style.display = "block";
     window.location.href = "#"
 
@@ -875,7 +876,7 @@ const Contact = () => {
 const Language = () => {
     return (
         <div id='language'>
-            <h2><MdLanguage style={{ width: "10%", height: "40px", marginRight: "1%", color: "orange" }} />Language</h2>
+            <h2><MdLanguage style={{ width: "10%", height: "40px", marginRight: "1%", color: "orange" }} />Language<span ><button className='btn btn-primary' style={{ width: "30%", height: "35px", marginTop: "5px", marginLeft: "10px" }} onClick={showskills }>Skip</button></span></h2>
             <hr></hr>
             <br></br>
             <FaLanguage style={{ width: "10%", height: "40px", marginRight: "1%", color: "orange" }} /><span><input type="text" required placeholder=" Main Language "></input></span>
