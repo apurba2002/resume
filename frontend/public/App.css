@@ -283,9 +283,7 @@ body{
 #tool-contain{
     display: flex;
 }
-#personal-info{
-    display: none;
-}
+
 .control-btn{
     float: right;
     margin-right: 5%;
@@ -296,24 +294,8 @@ body{
     margin-right: 5px;
     width: 20%;
 }
-#experience{
-    display: none;
-}
-#education{
-    display: none;
-}
-#address{
-    display: none;
-}
-#contacts{
-    display: none;
-}
-#language{
-    display: none;
-}
-#skills{
-    display: none;
-}
+
+
 
 @media  screen and (max-width:768px){
     body{

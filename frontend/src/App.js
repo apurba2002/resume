@@ -142,7 +142,14 @@ const showlanguage = () => {
 const showskills = () => {
     document.querySelector("#language").style.display = "none";
     document.querySelector("#skills").style.display = "block";
+    document.querySelector("#project").style.display = "none";
     window.location.href = "#"
+}
+function showproject() {
+    document.querySelector("#skills").style.display = "none";
+    document.querySelector("#project").style.display = "block";
+    window.location.href = "#";
+
 }
 const authentacate = (id, fun) => {
     let field = document.querySelector(id).value;
@@ -876,7 +883,7 @@ const Contact = () => {
 const Language = () => {
     return (
         <div id='language'>
-            <h2><MdLanguage style={{ width: "10%", height: "40px", marginRight: "1%", color: "orange" }} />Language<span ><button className='btn btn-primary' style={{ width: "30%", height: "35px", marginTop: "5px", marginLeft: "10px" }} onClick={showskills }>Skip</button></span></h2>
+            <h2><MdLanguage style={{ width: "10%", height: "40px", marginRight: "1%", color: "orange" }} />Language<span ><button className='btn btn-primary' style={{ width: "30%", height: "35px", marginTop: "5px", marginLeft: "10px" }} onClick={showskills}>Skip</button></span></h2>
             <hr></hr>
             <br></br>
             <FaLanguage style={{ width: "10%", height: "40px", marginRight: "1%", color: "orange" }} /><span><input type="text" required placeholder=" Main Language "></input></span>
@@ -884,7 +891,7 @@ const Language = () => {
             <FaLanguage style={{ width: "10%", height: "40px", marginRight: "1%", color: "orange" }} /><span><input type="text" placeholder="Additional Language 3"></input></span>
             <FaLanguage style={{ width: "10%", height: "40px", marginRight: "1%", color: "orange" }} /><span><input type="text" placeholder="Additional Language 2"></input></span>
             <FaLanguage style={{ width: "10%", height: "40px", marginRight: "1%", color: "orange" }} /><span><input type="text" placeholder="Additional Language 4"></input></span>
-            <button className='btn btn-primary control-btn' onClick={() => {showskills()} }>Next</button>
+            <button className='btn btn-primary control-btn' onClick={() => { showskills() }}>Next</button>
             <a className='btn btn-danger control-btn-back' onClick={showcontacts}  >Back</a>
 
         </div>
@@ -906,7 +913,7 @@ const Skill = () => {
             <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:8 "></input></span>
             <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:9 "></input></span>
             <GiSkills style={{ width: "10%", height: "40px", marginRight: "1%", color: "green" }} /><span><input type="text" placeholder=" Skill no:10 "></input></span>
-            <button className='btn btn-primary control-btn' onClick={() => {showskills()} }>Next</button>
+            <button className='btn btn-primary control-btn' onClick={() => { showproject() }}>Next</button>
             <a className='btn btn-danger control-btn-back' onClick={showlanguage}  >Back</a>
 
 
@@ -974,7 +981,6 @@ const Projectinput = () => {
 
             <br></br>
 
-            <BsParagraph style={{ width: "10%", height: "40px", marginRight: "1%", }} /><span><input style={{ paddingBottom: "100px", paddingTop: "20px" }} type="text" placeholder="Write about your project:"></input></span>
 
         </div>
     )
@@ -985,6 +991,7 @@ const Project1 = () => {
             {Projecthead(1)}
             <br></br>
             {Projectinput()}
+
         </div>
     )
 }
@@ -1026,7 +1033,7 @@ const Project5 = () => {
 }
 const Projectall = () => {
     return (
-        <div>
+        <div id='project'>
             <h2><FcVideoProjector style={{ width: "10%", height: "40px", marginRight: "1%", }} />Projects</h2>
             <hr></hr>
             <br></br>
@@ -1040,6 +1047,8 @@ const Projectall = () => {
             <br></br>
             {Project5()}
             <br></br>
+            <button className='btn btn-primary control-btn' onClick={() => { showproject() }}>Next</button>
+            <a className='btn btn-danger control-btn-back' onClick={showlanguage}  >Back</a>
 
         </div>
     )
